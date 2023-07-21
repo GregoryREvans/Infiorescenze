@@ -78,6 +78,9 @@ from .materials.time_signatures import (
     fermata_measures_01,
     reduced_signatures_01,
     signatures_01,
+    fermata_measures_02,
+    reduced_signatures_02,
+    signatures_02,
 )
 
 __all__ = [
@@ -108,11 +111,13 @@ __all__ = [
     "cello_swell_dynamics",
     "clef_whitespace",
     "fermata_measures_01",
+    "fermata_measures_02",
     "force_accidentals",
     "instruments",
     "label_clock_time",
     "multi_stac",
     "reduced_signatures_01",
+    "reduced_signatures_02",
     "cutaway",
     "replace_sigs",
     "scordatura",
@@ -120,6 +125,7 @@ __all__ = [
     "select_all_first_leaves",
     "select_run_first_leaves",
     "signatures_01",
+    "signatures_02",
     "swipe_stems",
     "special_hairpin",
     "start_bis_trill_one",

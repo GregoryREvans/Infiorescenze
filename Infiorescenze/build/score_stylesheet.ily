@@ -288,6 +288,13 @@ dashedStaffSymbolLines =
 		%{ tupletFullLengthNote = ##t % makes grace notes stand out %}
 		%{ subdivideBeams = ##t % just trying this out %}
 
+        \override VoiceFollower.bound-details.right.arrow = ##t
+        \override VoiceFollower.arrow-width = 0.25
+        \override VoiceFollower.bound-details.right.Y = 0
+        \override VoiceFollower.bound-details.right.end-on-accidental = ##t
+        \override VoiceFollower.style = #'dashed-line
+        \override VoiceFollower.dash-fraction = 0.6
+
 		\override VoltaBracketSpanner.Y-offset = #6 %?
 		\override MeasureCounter.Y-offset = #6 %?
 
@@ -375,7 +382,7 @@ dashedStaffSymbolLines =
         \alias Staff
 		%{ \remove Time_signature_engraver %}
         % just trying out in-line signatures to de-clutter and fit more on page
-        \override TimeSignature.X-extent = #'(0 . 0.5)
+        \override TimeSignature.X-extent = #'(0 . 1)
         %{ \override TimeSignature.break-align-symbol = #'left-edge %}
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = -0.45
@@ -421,7 +428,10 @@ dashedStaffSymbolLines =
         \accepts VanishingStaff
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
+        \consists #Explicit_interrupt_heads_engraver
         \consists #Follow_lines_engraver
+        \consists #Switch_heads_engraver
+        \override VoiceFollower.layer = -20
 
 	}
 

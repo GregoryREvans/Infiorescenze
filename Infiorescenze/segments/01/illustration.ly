@@ -2054,7 +2054,7 @@
                                                 \voiceTwo
                                                 e'32
                                                 \p
-                                                [
+                                                _ [
                                                   %! SPANNER_START
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -5257,7 +5257,7 @@
                                                     \voiceTwo
                                                     e'32
                                                     \p
-                                                    [
+                                                    _ [
                                                     (
                                                       %! SPANNER_START
                                                       %! baca.PiecewiseCommand._call(2)

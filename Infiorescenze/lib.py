@@ -1011,19 +1011,80 @@ def multi_trills(
     predicate=greater_than_or_equal_to,
     threshold=(1, 8),
     intervals=[[1], [0.5, 1], [0.5, 1, 1.5]],
-    extra_padding=[5]
+    extra_padding=[5],
+    with_notes=False,
 ):
     cyc_padding = evans.CyclicList(extra_padding, forget=False)
     cyc_intervals = evans.CyclicList(intervals, forget=False)
-    for tie in get_ties_relative_to_threshold(selections, predicate=predicate, threshold=threshold, pitched=True):
-        padding = cyc_padding(r=1)[0]
-        interval_sub_group = [abjad.NumberedInterval(_) for _ in cyc_intervals(r=1)[0]]
-        reference_pitch = tie[0].written_pitch
-        trill_pitches = [interval.transpose(reference_pitch).name for interval in interval_sub_group]
-        evans.make_multi_trill(
-            tie,
-            *trill_pitches,
-            notehead_styles=[None],
-            after_spacing="1/16",
-            extra_padding=padding,
+    if with_notes is False:
+        for tie in get_ties_relative_to_threshold(selections, predicate=predicate, threshold=threshold, pitched=True):
+            padding = cyc_padding(r=1)[0]
+            interval_sub_group = [abjad.NumberedInterval(_) for _ in cyc_intervals(r=1)[0]]
+            reference_pitch = tie[0].written_pitch
+            trill_pitches = [interval.transpose(reference_pitch).name for interval in interval_sub_group]
+            evans.make_multi_trill(
+                tie,
+                *trill_pitches,
+                notehead_styles=[None],
+                after_spacing="1/16",
+                extra_padding=padding,
+            )
+    elif with_notes is True:
+        for note in abjad.select.notes(selections):
+            padding = cyc_padding(r=1)[0]
+            interval_sub_group = [abjad.NumberedInterval(_) for _ in cyc_intervals(r=1)[0]]
+            reference_pitch = note.written_pitch
+            trill_pitches = [interval.transpose(reference_pitch).name for interval in interval_sub_group]
+            evans.make_multi_trill(
+                note,
+                *trill_pitches,
+                notehead_styles=[None],
+                after_spacing="1/16",
+                extra_padding=padding,
+                with_notes=True
+            )
+
+
+def obgc(selections, counts=[2, 3, 2, 4, 3, 5], grace_duration=(1, 50), default_beam_position=5, beam_position_list=None):
+    cyc_counts = evans.CyclicList(counts, forget=False)
+    notes = abjad.select.notes(selections)
+    compiled_positions = [default_beam_position for _ in range(len(notes))]
+    for pair in beam_position_list:
+        compiled_positions[pair[0]] = pair[1]
+    cyc_positions = evans.CyclicList(compiled_positions, forget=False)
+    for i, note in enumerate(notes):
+        beam_position = cyc_positions(r=1)[0]
+        divisions = [abjad.Duration((1, 8)) for _ in range(cyc_counts(r=1)[0])]
+        leaves = rmakers.note(divisions)
+        leaves = abjad.sequence.flatten(leaves)
+        for leaf in leaves:
+            leaf.written_pitch = note.written_pitch
+        start_literal = abjad.LilyPondLiteral(
+            [
+                r"\override Beam.beam-thickness = 0.5",
+                rf"\once \override Beam.positions = #'({beam_position} . {beam_position})",
+                r"\start-ob-multi-grace",
+                # r"[",
+                r"_(",
+            ],
+            site="before"
+        )
+        stop_literal = abjad.LilyPondLiteral(
+            [
+                # r"]",
+                r")",
+                r"\revert Beam.beam-thickness",
+                r"\stop-ob-multi-grace",
+            ],
+            site="after"
+        )
+        abjad.attach(start_literal, leaves[0])
+        abjad.attach(stop_literal, leaves[-1])
+        abjad.on_beat_grace_container(
+            leaves,
+            [note],
+            leaf_duration=grace_duration,
+            do_not_slash=True,
+            do_not_slur=True,
+            font_size=-4,
         )
