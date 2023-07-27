@@ -465,6 +465,8 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r4.
                                         \override Staff.BarLine.transparent = ##t
 
@@ -483,6 +485,8 @@
                                         \override Staff.BarLine.transparent = ##f
                                         \override Staff.Clef.transparent =  ##f
                                         \override Staff.TimeSignature.transparent =  ##f
+                                        \override Staff.TupletBracket.transparent =  ##f
+                                        \override Staff.TupletNumber.transparent =  ##f
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -1210,6 +1214,7 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \start-explicit-interrupt
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'2.
@@ -1260,6 +1265,7 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \stop-switch
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4.
@@ -1477,6 +1483,38 @@
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-red
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 8
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \default-notehead-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \half-air-tone-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
                                                 ~
                                                 \stopDoubleTrill
 
@@ -1491,6 +1529,10 @@
                                         \oneVoice
                                         \afterGrace 1/16
                                         fs'2..
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.text_spanner()
+                                        \stopTextSpanOne
                                         ~
                                         {
                                              \suggest-pitch-open  g'32 \startTripleTrill #6 #5 #4      \suggest-pitch-middle  eqs'32     \suggest-pitch-close  gs'32}
@@ -1532,8 +1574,12 @@
                                                 [
 
                                                 eqs'8 * 4/15
+                                                _ \accent
+                                                _ \stopped
 
                                                 ef''8 * 4/15
+                                                _ \accent
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1544,6 +1590,7 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \start-explicit-interrupt
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4.
@@ -1578,12 +1625,19 @@
                                                 [
 
                                                 a'8 * 4/15
+                                                _ \stopped
 
                                                 bqf''8 * 4/15
+                                                _ \accent
+                                                _ \stopped
 
                                                 gqs'8 * 4/15
+                                                _ \staccatissimo
+                                                _ \stopped
 
                                                 dqf'8 * 4/15
+                                                _ \accent
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1594,9 +1648,74 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \stop-switch
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-red
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 8.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \default-notehead-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \half-air-tone-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-yellow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 10.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \normal-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \half-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanTwo
                                                 ~
 
                                             }
@@ -1614,6 +1733,14 @@
                                             \oneVoice
                                             \afterGrace 1/16
                                             fs'4
+                                              %! SPANNER_STOP
+                                              %! baca.PiecewiseCommand._call(3)
+                                              %! baca.text_spanner()
+                                            \stopTextSpanOne
+                                              %! SPANNER_STOP
+                                              %! baca.PiecewiseCommand._call(3)
+                                              %! baca.text_spanner()
+                                            \stopTextSpanTwo
                                             ~
                                             {
                                                  \suggest-pitch-open  es'32 \startTripleTrill #7.5 #6.5 #5.5      \suggest-pitch-middle  g'32     \suggest-pitch-close  gqs'32}
@@ -1644,6 +1771,7 @@
                                                 [
 
                                                 c''8 * 4/15
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1658,6 +1786,38 @@
                                                 \voiceTwo
                                                 fs'2
                                                 :32
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-yellow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 10.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \half-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \normal-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanTwo
                                                 ~
                                                 \stopTripleTrill
 
@@ -1689,8 +1849,11 @@
                                                 [
 
                                                 gqs'8 * 4/15
+                                                _ \stopped
 
                                                 fs''8 * 4/15
+                                                _ \accent
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1704,6 +1867,10 @@
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.text_spanner()
+                                                \stopTextSpanTwo
                                                 ~
 
                                             }
@@ -1734,6 +1901,8 @@
                                                 [
 
                                                 gqs'8 * 4/15
+                                                _ \staccatissimo
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1747,6 +1916,70 @@
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4.
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-red
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 8.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \half-air-tone-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \default-notehead-markup
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-yellow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 10.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \normal-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \half-pressure
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanTwo
                                                 ~
 
                                             }
@@ -1761,6 +1994,14 @@
                                         \afterGrace 1/16
                                         fs'4.
                                         :32
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.text_spanner()
+                                        \stopTextSpanOne
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.text_spanner()
+                                        \stopTextSpanTwo
                                         ~
                                         {
                                              \suggest-pitch-open  g'32 \startDoubleTrill #5 #4 
@@ -1788,10 +2029,15 @@
                                                 [
 
                                                 a'8 * 4/15
+                                                _ \stopped
 
                                                 dqf'8 * 4/15
+                                                _ \accent
+                                                _ \stopped
 
                                                 ef''8 * 4/15
+                                                _ \staccato
+                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1814,38 +2060,84 @@
 
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [alto flute 2 voice measure 25]
-                                              %! abjad.on_beat_grace_container(5)
-                                            \oneVoice
-                                            c'16
-                                            \stopTrillSpan
-                                            ^ [
-
-                                            c'16
-
-                                            c'16
-
-                                            c'16
-                                            ~
-
                                             \times 2/3
                                             {
 
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ]
+                                                  %! COMMENT_MEASURE_NUMBERS
+                                                  %! evans.SegmentMaker.comment_measure_numbers()
+                                                % [alto flute 2 voice measure 25]
+                                                  %! abjad.on_beat_grace_container(5)
+                                                \oneVoice
+                                                \pitchedTrill
+                                                cs''16.
+                                                \ppp
+                                                \stopTrillSpan
+                                                ^ [
+                                                \startTrillSpan d''
 
-                                                c'4
+                                                a''32
+                                                - \staccato
+                                                \mf
+                                                \stopTrillSpan
+
+                                                bf'32
+                                                - \accent
+                                                \mp
+
+                                                f'''32
+                                                - \staccato
+                                                \ff
+
+                                                fs'32
+                                                - \accent
+                                                \mp
+
+                                                d'32
+                                                - \staccato
+                                                \mf
+
+                                                \slapped
+                                                e'''32
+                                                \ff
+
+                                                ef''32
+                                                \f
+                                                \revert-noteheads
+
+                                                r16
 
                                             }
 
                                             \times 2/3
                                             {
 
-                                                c'4
+                                                r8.
+
+                                                \half-air-tone
+                                                \tongue #3
+                                                g''16
+                                                - \bendAfter #'-2
+                                                - \stopped
+                                                \mp
+
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 1
+                                                af'8
+                                                - \stopped
+                                                - \tenuto
+                                                \ff
+                                                ]
+
+                                            }
+
+                                            \times 2/3
+                                            {
+
+                                                c''4
+                                                - \stopped
+                                                - \tenuto
+                                                \mp
+                                                \revert-noteheads
 
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 1
@@ -1888,14 +2180,49 @@
                                                 \times 2/3
                                                 {
 
-                                                    \set stemLeftBeamCount = 2
-                                                    \set stemRightBeamCount = 2
-                                                    c'16
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    \slapped
+                                                    \pitchedTrill
+                                                    b''32
+                                                    \pp
                                                     ^ [
+                                                    \startTrillSpan c'''
 
-                                                    c'16
+                                                    bf'64
+                                                    \ff
+                                                    \stopTrillSpan
+                                                    \revert-noteheads
 
-                                                    c'16
+                                                    r64
+
+                                                    \half-air-tone
+                                                    \tongue #3
+                                                    b'''16
+                                                    - \bendAfter #'-2
+                                                    - \stopped
+                                                    \mf
+
+                                                    g''64
+                                                    - \stopped
+                                                    - \tenuto
+                                                    \f
+
+                                                    fs'64
+                                                    - \stopped
+                                                    - \tenuto
+                                                    \ff
+
+                                                    d''64
+                                                    - \marcato
+                                                    - \stopped
+                                                    \mp
+
+                                                    ef''64
+                                                    - \stopped
+                                                    - \tenuto
+                                                    \mf
+                                                    ~
 
                                                 }
 
@@ -1909,32 +2236,58 @@
                                             \times 2/3
                                             {
 
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 29]
-                                                c'8
+                                                \times 4/5
+                                                {
 
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                c'16
-                                                ]
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 29]
+                                                    ef''16
+                                                    \revert-noteheads
 
-                                                r4.
+                                                    cs'8
 
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                c'16
-                                                ^ [
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    f'32
+                                                    ]
 
-                                                c'16
+                                                    r4.
 
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                c'16
-                                                ]
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    r32
+                                                    ^ [
 
-                                                c'4
-                                                ~
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    r16
+
+                                                    e'32
+
+                                                    a'32
+
+                                                    af'32
+
+                                                    c'32
+
+                                                    r32
+
+                                                    e'32
+
+                                                    c'32
+
+                                                    cs'32
+
+                                                    af'8..
+
+                                                    a'16.
+                                                    ~
+
+                                                }
 
                                             }
 
@@ -1942,32 +2295,41 @@
 
                                         {
 
-                                            \times 2/3
+                                            \times 4/5
                                             {
 
                                                   %! COMMENT_MEASURE_NUMBERS
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 30]
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ^ [
+                                                a'16..
 
-                                                c'16
+                                                r64
 
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                c'16
-                                                ]
+                                                f'64
 
-                                                r4.
+                                                g'16
 
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                c'16
-                                                ^ [
+                                                r16..
 
-                                                c'16
+                                            }
+
+                                            \times 4/5
+                                            {
+
+                                                r8.
+
+                                                r64
+
+                                                fs'64
+
+                                                bf'64
+
+                                                b'32
+
+                                                ef'64
+
+                                                d'32
+                                                ~
 
                                             }
 
@@ -1975,94 +2337,52 @@
 
                                         {
 
-                                            \times 2/3
+                                            \times 4/5
                                             {
 
                                                   %! COMMENT_MEASURE_NUMBERS
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 31]
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ]
+                                                d'16
 
-                                                r4
+                                                ef'32
+
+                                                r8..
 
                                             }
 
                                             \times 2/3
                                             {
 
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
                                                 r8
-                                                ^ [
 
-                                                c'8
-
-                                                c'8
-
-                                            }
-
-                                            \times 2/3
-                                            {
-
-                                                c'8
-
-                                                c'8
-
-                                                c'8
-
-                                            }
-
-                                        }
-
-                                        {
-
-                                            \times 2/3
-                                            {
-
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 32]
-                                                c'8
-
-                                                c'8
-
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ]
-
-                                            }
-
-                                            c'4.
-
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            c'8
-                                            ^ [
-
-                                        }
-
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [alto flute 2 voice measure 33]
-                                            c'8
-                                            ~
-
-                                            \tweak text #tuplet-number::calc-fraction-text
-                                            \times 8/7
-                                            {
+                                                e'16
 
                                                 c'32
 
-                                                c'16
+                                                b'16
+
+                                                g'32
+
+                                                af'16
                                                 ~
 
-                                                c'64
+                                            }
+
+                                            \times 2/3
+                                            {
+
+                                                af'16
+
+                                                r8
+
+                                                fs'16
+
+                                                bf'16
+
+                                                a'32
+
+                                                d'32
 
                                             }
 
@@ -2070,19 +2390,167 @@
 
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [alto flute 2 voice measure 34]
-                                            c'32
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 3/4
+                                            {
 
-                                            c'8..
+                                                \times 4/5
+                                                {
 
-                                            c'8
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 32]
+                                                    cs'32
 
-                                            \set stemLeftBeamCount = 1
-                                            \set stemRightBeamCount = 1
-                                            r8
-                                            ]
+                                                    f'32
+
+                                                    a'32
+
+                                                    r32
+
+                                                    f'32
+
+                                                    fs'32
+
+                                                    cs'8..
+
+                                                    d'8
+                                                    ~
+
+                                                    d'32
+
+                                                    \set stemLeftBeamCount = 2
+                                                    \set stemRightBeamCount = 2
+                                                    bf'16
+                                                    ]
+                                                    ~
+
+                                                }
+
+                                                \times 2/3
+                                                {
+
+                                                    bf'4
+                                                    ~
+
+                                                    \set stemLeftBeamCount = 2
+                                                    \set stemRightBeamCount = 2
+                                                    bf'16
+                                                    ^ [
+
+                                                    c'8.
+
+                                                    b'8
+
+                                                    ef'8
+
+                                                }
+
+                                            }
+
+                                        }
+
+                                        {
+
+                                            \times 4/5
+                                            {
+
+                                                \times 4/5
+                                                {
+
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 33]
+                                                    e'64
+
+                                                    r32
+
+                                                    af'64
+
+                                                    g'64
+                                                    ~
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    g'32.
+
+                                                    fs'32
+                                                    ~
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    fs'32
+
+                                                    r32.
+
+                                                }
+
+                                                r64
+
+                                                g'16..
+
+                                            }
+
+                                        }
+
+                                        {
+
+                                            \times 2/3
+                                            {
+
+                                                \times 2/3
+                                                {
+
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 34]
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    ef'32
+                                                    ]
+
+                                                    d'4
+                                                    ~
+
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    d'32
+                                                    ^ [
+
+                                                    bf'16
+                                                    ~
+
+                                                }
+
+                                                \times 2/3
+                                                {
+
+                                                    bf'16.
+
+                                                    b'32
+
+                                                    a'32
+
+                                                    cs'32
+
+                                                }
+
+                                                c'16.
+
+                                                f'16.
+
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 2
+                                                r8.
+                                                ]
+
+                                            }
 
                                         }
 
@@ -2101,25 +2569,58 @@
                                             \times 3/4
                                             {
 
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 36]
-                                                \set stemLeftBeamCount = 3
-                                                \set stemRightBeamCount = 3
-                                                r8..
-                                                ^ [
+                                                \times 4/5
+                                                {
 
-                                                c'32
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 36]
+                                                    r4
 
-                                                c'32
+                                                    \set stemLeftBeamCount = 4
+                                                    \set stemRightBeamCount = 4
+                                                    r64
+                                                    ^ [
 
-                                                c'32
+                                                    r64
 
-                                                c'32
+                                                    e'64
 
-                                                c'32
+                                                    af'64
 
-                                                c'8
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    bf'64
+
+                                                    fs'64
+
+                                                    g'64
+
+                                                    r64
+
+                                                    d'32
+
+                                                    ef'64
+
+                                                    b'64
+
+                                                    cs'64
+
+                                                    c'64
+
+                                                    e'32.
+
+                                                    f'32
+
+                                                    a'16
+                                                    ~
+
+                                                    a'64
+
+                                                }
 
                                             }
 
@@ -2127,7 +2628,7 @@
 
                                         {
 
-                                            \times 4/5
+                                            \times 2/3
                                             {
 
                                                 \times 2/3
@@ -2136,30 +2637,114 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 37]
-                                                    c'16
+                                                    af'16
+                                                    ~
 
-                                                    c'32
+                                                    af'64
+
+                                                    e'16
+                                                    ~
+
+                                                    e'64
+
+                                                    f'32
                                                     ~
 
                                                 }
 
-                                                c'8
-                                                ~
+                                                \times 4/5
+                                                {
+
+                                                    f'32
+
+                                                    r64
+
+                                                    cs'64
+
+                                                    c'32
+
+                                                    af'16
+                                                    ~
+
+                                                }
+
+                                                af'16
 
                                                 \times 2/3
                                                 {
 
-                                                    c'32
+                                                    a'32.
 
-                                                    c'16
-                                                    ~
+                                                    g'64
+
+                                                    r64
+
+                                                    b'64
 
                                                 }
 
-                                                c'32
+                                            }
+
+                                        }
+
+                                        {
+
+                                            \times 2/3
+                                            {
+
+                                                  %! COMMENT_MEASURE_NUMBERS
+                                                  %! evans.SegmentMaker.comment_measure_numbers()
+                                                % [alto flute 2 voice measure 38]
+                                                bf'32
+
+                                                ef'32
+
+                                                d'16.
+
+                                                fs'8
+
+                                                g'16
+
+                                                ef'32
+                                                ~
+
+                                            }
+
+                                            \times 4/5
+                                            {
+
+                                                ef'32
+
+                                                e'32
+
+                                                b'16
+
+                                                c'8
+                                                ~
 
                                                 c'32
-                                                ~
+
+                                                af'32
+
+                                            }
+
+                                            \times 2/3
+                                            {
+
+                                                bf'32
+
+                                                \set stemLeftBeamCount = 3
+                                                \set stemRightBeamCount = 3
+                                                a'32
+                                                ]
+
+                                                r4
+
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 2
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 2
+                                                r16
 
                                             }
 
@@ -2171,32 +2756,48 @@
                                             \times 3/4
                                             {
 
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 38]
-                                                c'16
-
-                                                c'8.
-
-                                                c'8
-
-                                                c'8
-                                                ~
-
-                                                \tweak text #tuplet-number::calc-fraction-text
-                                                \times 8/7
+                                                \times 4/5
                                                 {
 
-                                                    c'16
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 39]
+                                                    r2
 
-                                                    c'16
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    r32
+                                                    ^ [
+
+                                                    cs'32
+
+                                                    d'16
+                                                    ~
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    d'32
+                                                    ]
+
+                                                    fs'4
 
                                                     \set stemLeftBeamCount = 2
                                                     \set stemRightBeamCount = 2
-                                                    c'16
-                                                    ]
+                                                    f'16
+                                                    ^ [
 
-                                                    r4
+                                                    c'16
+
+                                                    cs'8
+
+                                                    a'16
+
+                                                    r32
 
                                                 }
 
@@ -2206,63 +2807,53 @@
 
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [alto flute 2 voice measure 39]
-                                            r4
-
-                                            \times 4/5
-                                            {
-
-                                                \set stemLeftBeamCount = 2
-                                                \set stemRightBeamCount = 2
-                                                r16
-                                                ^ [
-
-                                                c'16
-
-                                                c'16
-
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ]
-
-                                            }
-
                                             \times 2/3
                                             {
 
-                                                c'4
+                                                \times 2/3
+                                                {
 
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ^ [
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 40]
+                                                    af'16
+                                                    ~
 
-                                            }
+                                                    af'64
 
-                                        }
+                                                    e'16.
 
-                                        {
+                                                    f'64
+                                                    ~
 
-                                            \tweak text #tuplet-number::calc-fraction-text
-                                            \times 8/7
-                                            {
+                                                }
 
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 40]
-                                                c'8
-                                                ~
+                                                \times 2/3
+                                                {
 
-                                                c'64
+                                                    f'32
 
-                                                c'16
-                                                ~
+                                                    ef'8
+                                                    ~
 
-                                                c'64
-                                                ~
+                                                    ef'64
+
+                                                    g'64
+                                                    ~
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    g'32.
+
+                                                    fs'16
+
+                                                    b'32.
+                                                    ~
+
+                                                }
 
                                             }
 
@@ -2272,18 +2863,43 @@
 
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \tweak edge-height #'(0.7 . 0)
-                                            \times 40/39
+                                            \times 20/21
                                             {
 
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 41]
-                                                c'32
+                                                \times 2/3
+                                                {
 
-                                                \set stemLeftBeamCount = 1
-                                                \set stemRightBeamCount = 1
-                                                c'8
-                                                ]
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [alto flute 2 voice measure 41]
+                                                    b'16
+
+                                                    bf'32
+                                                    ~
+
+                                                }
+
+                                                \times 2/3
+                                                {
+
+                                                    bf'16
+
+                                                    d'32
+                                                    ~
+
+                                                }
+
+                                                \times 2/3
+                                                {
+
+                                                    d'16
+
+                                                    \set stemLeftBeamCount = 3
+                                                    \set stemRightBeamCount = 3
+                                                    r32
+                                                    ]
+
+                                                }
 
                                                 r4
 
@@ -2294,7 +2910,7 @@
                                         {
 
                                             \tweak text #tuplet-number::calc-fraction-text
-                                            \times 5/8
+                                            \times 5/6
                                             {
 
                                                   %! COMMENT_MEASURE_NUMBERS
@@ -2302,18 +2918,23 @@
                                                 % [alto flute 2 voice measure 42]
                                                 r2
 
-                                                \tweak text #tuplet-number::calc-fraction-text
-                                                \times 8/7
+                                                \set stemLeftBeamCount = 3
+                                                \set stemRightBeamCount = 3
+                                                r16.
+                                                ^ [
+
+                                                r32
+
+                                                \times 2/3
                                                 {
 
-                                                    r4
+                                                    r32
 
-                                                    \set stemLeftBeamCount = 1
-                                                    \set stemRightBeamCount = 1
-                                                    c'8
-                                                    ^ [
+                                                    ef'32
 
-                                                    c'16
+                                                    b'16.
+
+                                                    c'32
 
                                                 }
 
@@ -2323,32 +2944,61 @@
 
                                         {
 
-                                            \tweak text #tuplet-number::calc-fraction-text
-                                            \times 3/4
+                                            \times 2/3
                                             {
 
                                                   %! COMMENT_MEASURE_NUMBERS
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 43]
-                                                c'32
+                                                r64
 
-                                                c'32
+                                                g'64
 
-                                                c'16.
+                                                af'64
 
-                                                c'16.
+                                                e'64
+
+                                                fs'64
+
+                                                f'32
+
+                                                a'32.
+
+                                                bf'64
+
+                                                d'64
                                                 ~
 
-                                                \times 2/3
-                                                {
+                                            }
 
-                                                    c'8
+                                            \times 2/3
+                                            {
 
-                                                    c'16
+                                                d'16
+                                                ~
 
-                                                }
+                                                d'64
 
-                                                c'8
+                                                cs'16.
+
+                                                r64
+
+                                            }
+
+                                            \times 2/3
+                                            {
+
+                                                r32
+
+                                                a'64
+
+                                                bf'32
+
+                                                fs'16.
+
+                                                \set stemLeftBeamCount = 4
+                                                \set stemRightBeamCount = 4
+                                                r64
                                                 ]
 
                                             }
@@ -2357,10 +3007,26 @@
 
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [alto flute 2 voice measure 44]
-                                            r4
+                                            \times 2/3
+                                            {
+
+                                                  %! COMMENT_MEASURE_NUMBERS
+                                                  %! evans.SegmentMaker.comment_measure_numbers()
+                                                % [alto flute 2 voice measure 44]
+                                                r4
+
+                                                \times 4/5
+                                                {
+
+                                                    \set stemLeftBeamCount = 1
+                                                    \set stemRightBeamCount = 1
+                                                    r8
+
+                                                    r32
+
+                                                }
+
+                                            }
 
                                         }
 
@@ -2419,15 +3085,139 @@
                                         % [alto flute 3 voice measure 8]
                                         r2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [alto flute 3 voice measure 9]
-                                        r2.
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'2.
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [alto flute 3 voice measure 9]
+                                            \all-color-music \safe-red
+                                            r16 * 15/8
+
+                                            r16 * 115/64
+
+                                            r16 * 103/64
+
+                                            r16 * 11/8
+
+                                            \stop-explicit-interrupt
+                                            \once \override Beam.grow-direction = #RIGHT
+                                            \once \override Staff.Beam.beam-thickness = 1
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            d''!16 * 37/32
+                                            \ppp
+                                            [
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \tweak bound-details.right.padding 0.5
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \tweak bound-details.right.stencil-align-dir-y #center
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \tweak color #safe-red
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \tweak staff-padding 3
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \abjad-solid-line-with-arrow
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \baca-text-spanner-left-markup \default-notehead-markup
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \baca-text-spanner-right-markup \half-air-tone-markup
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \startTextSpanOne
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \four-fifths-sharp-markup
+                                            ds''!16 * 1
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \one-fifth-sharp-markup
+                                            d''!16 * 7/8
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \three-fifths-sharp-markup
+                                            ds''!16 * 13/16
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \two-fifths-sharp-markup
+                                            d''!16 * 49/64
+
+                                            \start-switch 0.125
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            e''!16 * 47/64
+                                              %! SPANNER_STOP
+                                              %! baca.PiecewiseCommand._call(3)
+                                              %! baca.text_spanner()
+                                            \stopTextSpanOne
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 3 voice measure 10]
+                                        \stopStaff
+                                        \override Staff.Rest.transparent =  ##t
+                                        \override Staff.Dots.transparent =  ##t
+                                        \override Staff.Clef.transparent =  ##t
+                                        \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r2
+                                        \override Staff.BarLine.transparent = ##t
 
                                         r8
 
@@ -2446,6 +3236,14 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 3 voice measure 12]
                                         r2.
+                                        \startStaff
+                                        \override Staff.Rest.transparent =  ##f
+                                        \override Staff.Dots.transparent =  ##f
+                                        \override Staff.BarLine.transparent = ##f
+                                        \override Staff.Clef.transparent =  ##f
+                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \override Staff.TupletBracket.transparent =  ##f
+                                        \override Staff.TupletNumber.transparent =  ##f
 
                                         \tweak edge-height #'(0.7 . 0)
                                         \times 2/3
@@ -2476,17 +3274,149 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 3 voice measure 17]
+                                        \stopStaff
+                                        \override Staff.Rest.transparent =  ##t
+                                        \override Staff.Dots.transparent =  ##t
+                                        \override Staff.Clef.transparent =  ##t
+                                        \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r2
+                                        \override Staff.BarLine.transparent = ##t
+                                        \startStaff
+                                        \override Staff.Rest.transparent =  ##f
+                                        \override Staff.Dots.transparent =  ##f
+                                        \override Staff.BarLine.transparent = ##f
+                                        \override Staff.Clef.transparent =  ##f
+                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \override Staff.TupletBracket.transparent =  ##f
+                                        \override Staff.TupletNumber.transparent =  ##f
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [alto flute 3 voice measure 18]
-                                        r4.
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'4.
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [alto flute 3 voice measure 18]
+                                            \all-color-music \safe-red
+                                            r32 * 63/32
+
+                                            r32 * 61/32
+
+                                            r32 * 7/4
+
+                                            r32 * 25/16
+
+                                            \stop-explicit-interrupt
+                                            \once \override Beam.grow-direction = #RIGHT
+                                            \once \override Staff.Beam.beam-thickness = 1
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            d''!32 * 11/8
+                                            \ppp
+                                            [
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \tweak bound-details.right.padding 0.5
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \tweak bound-details.right.stencil-align-dir-y #center
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \tweak color #safe-red
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \tweak staff-padding 1
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \abjad-solid-line-with-arrow
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \baca-text-spanner-left-markup \default-notehead-markup
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            - \baca-text-spanner-right-markup \half-air-tone-markup
+                                              %! SPANNER_START
+                                              %! baca.PiecewiseCommand._call(2)
+                                              %! baca.text_spanner()
+                                            \startTextSpanOne
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \four-fifths-sharp-markup
+                                            ds''!32 * 39/32
+
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \one-fifth-sharp-markup
+                                            d''!32 * 9/8
+
+                                            \start-switch 0.125
+                                            \tweak Accidental.stencil #ly:text-interface::print
+                                            \tweak Accidental.text \three-fifths-sharp-markup
+                                            ds''!32 * 35/32
+                                              %! SPANNER_STOP
+                                              %! baca.PiecewiseCommand._call(3)
+                                              %! baca.text_spanner()
+                                            \stopTextSpanOne
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 3 voice measure 19]
+                                        \stopStaff
+                                        \override Staff.Rest.transparent =  ##t
+                                        \override Staff.Dots.transparent =  ##t
+                                        \override Staff.Clef.transparent =  ##t
+                                        \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r4
+                                        \override Staff.BarLine.transparent = ##t
 
                                         \tweak edge-height #'(0.7 . 0)
                                         \times 4/5
@@ -2496,6 +3426,14 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [alto flute 3 voice measure 20]
                                             r4
+                                            \startStaff
+                                            \override Staff.Rest.transparent =  ##f
+                                            \override Staff.Dots.transparent =  ##f
+                                            \override Staff.BarLine.transparent = ##f
+                                            \override Staff.Clef.transparent =  ##f
+                                            \override Staff.TimeSignature.transparent =  ##f
+                                            \override Staff.TupletBracket.transparent =  ##f
+                                            \override Staff.TupletNumber.transparent =  ##f
 
                                         }
 

@@ -6,6 +6,7 @@ import baca
 import evans
 import numpy as np
 from abjadext import rmakers
+from fractions import Fraction
 
 import Infiorescenze
 
@@ -14,67 +15,69 @@ def articulate_gesture(selections):
     runs = abjad.select.runs(selections)
     for r_i, run in enumerate(runs):
         ties = abjad.select.logical_ties(run)
-        if r_i % 2 == 0:
-            abjad.attach(
-                abjad.StartTrillSpan(interval=abjad.NamedInterval("+m2")),
-                ties[0][0],
-            )
-            abjad.attach(
-                abjad.StopTrillSpan(),
-                abjad.get.leaf(ties[0][-1], 1),
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\slapped", site="before"),
-                ties[-2][0],
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                ties[-1][-1],
-            )
-            for i, tie in enumerate(ties[1:-2]):
-                if i % 2 == 0:
-                    abjad.attach(abjad.Articulation("staccato"), tie[0])
-                else:
-                    abjad.attach(abjad.Articulation("accent"), tie[0])
-        else:
-            abjad.attach(
-                abjad.BendAfter(-2),
-                ties[0][0],
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\tongue #3"),
-                ties[0][0],
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\half-air-tone", site="before"),
-                ties[0][0],
-            )
-            abjad.attach(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                ties[-1][-1],
-            )
-            for i, tie in enumerate(ties):
-                abjad.attach(abjad.Articulation("stopped"), tie[0])
-                if i == 0:
-                    continue
-                if i % 3 == 0:
-                    abjad.attach(abjad.Articulation("marcato"), tie[0])
-                else:
-                    abjad.attach(abjad.Articulation("tenuto"), tie[0])
+        if 1 < len(ties):
+            if r_i % 2 == 0:
+                abjad.attach(
+                    abjad.StartTrillSpan(interval=abjad.NamedInterval("+m2")),
+                    ties[0][0],
+                )
+                abjad.attach(
+                    abjad.StopTrillSpan(),
+                    abjad.get.leaf(ties[0][-1], 1),
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\slapped", site="before"),
+                    ties[-2][0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                    ties[-1][-1],
+                )
+                for i, tie in enumerate(ties[1:-2]):
+                    if i % 2 == 0:
+                        abjad.attach(abjad.Articulation("staccato"), tie[0])
+                    else:
+                        abjad.attach(abjad.Articulation("accent"), tie[0])
+            else:
+                abjad.attach(
+                    abjad.BendAfter(-2),
+                    ties[0][-1],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\tongue #3"),
+                    ties[0][0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\half-air-tone", site="before"),
+                    ties[0][0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                    ties[-1][-1],
+                )
+                for i, tie in enumerate(ties):
+                    abjad.attach(abjad.Articulation("stopped"), tie[0])
+                    if i == 0:
+                        continue
+                    if i % 3 == 0:
+                        abjad.attach(abjad.Articulation("marcato"), tie[0])
+                    else:
+                        abjad.attach(abjad.Articulation("tenuto"), tie[0])
     ties = abjad.select.logical_ties(runs)
-    for i, tie in enumerate(ties):
-        if i == 0:
-            abjad.attach(abjad.Dynamic("ppp"), tie[0])
-        elif i % 3 == 0:
-            abjad.attach(abjad.Dynamic("ff"), tie[0])
-        elif i % 7 == 0:
-            abjad.attach(abjad.Dynamic("f"), tie[0])
-        elif i % 2 == 0:
-            abjad.attach(abjad.Dynamic("mp"), tie[0])
-        elif i % 11 == 0:
-            abjad.attach(abjad.Dynamic("pp"), tie[0])
-        else:
-            abjad.attach(abjad.Dynamic("mf"), tie[0])
+    if 1 < len(ties):
+        for i, tie in enumerate(ties):
+            if i == 0:
+                abjad.attach(abjad.Dynamic("ppp"), tie[0])
+            elif i % 3 == 0:
+                abjad.attach(abjad.Dynamic("ff"), tie[0])
+            elif i % 7 == 0:
+                abjad.attach(abjad.Dynamic("f"), tie[0])
+            elif i % 2 == 0:
+                abjad.attach(abjad.Dynamic("mp"), tie[0])
+            elif i % 11 == 0:
+                abjad.attach(abjad.Dynamic("pp"), tie[0])
+            else:
+                abjad.attach(abjad.Dynamic("mf"), tie[0])
 
 
 maker = evans.SegmentMaker(
@@ -132,6 +135,22 @@ maker = evans.SegmentMaker(
             #     abjad.LilyPondLiteral(r"\stop-switch", site="absolute_before"),
             #     selector=lambda _: abjad.select.leaf(_, 8),
             # ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\start-explicit-interrupt", site="absolute_before"),
+                selector=lambda _: abjad.select.leaf(_, 8),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\stop-switch", site="absolute_before"),
+                selector=lambda _: abjad.select.leaf(_, 9),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\start-explicit-interrupt", site="absolute_before"),
+                selector=lambda _: abjad.select.leaf(_, 18),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\stop-switch", site="absolute_before"),
+                selector=lambda _: abjad.select.leaf(_, 19),
+            ),
             abjad.StartTrillSpan(interval=abjad.NamedInterval("+P1")),
             evans.Attachment(
                 abjad.StopTrillSpan(),
@@ -231,6 +250,180 @@ maker = evans.SegmentMaker(
             ),
         ),
         evans.MusicCommand(
+            ("alto flute 3 voice", [8]),
+            evans.accelerando(
+                [(1, 8), (1, 20), (1, 16)],
+                preprocessor=None,
+            ),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 0)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 1)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 2)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 3)),
+            # lambda _: rmakers.force_rest(abjad.select.leaf(_, -1)),
+            # lambda _: rmakers.force_rest(abjad.select.leaf(_, -2)),
+            lambda _: abjad.beam(abjad.select.notes(_)),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\once \override Beam.grow-direction = #RIGHT", site="before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\once \override Staff.Beam.beam-thickness = 1", site="before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.PitchHandler([14]),
+            evans.PitchHandler(
+                [0, "8/5", "2/5", "6/5", "4/5", 2],
+                apply_all=True,
+                apply_all_spelling="sharp",
+            ),
+            lambda _: Infiorescenze.force_accidentals(_),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\stop-explicit-interrupt", site="absolute_before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\start-switch 0.125", site="absolute_before"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\all-color-music \safe-red", site="before"),
+                selector=lambda _: abjad.select.leaf(_, 0),
+            ),
+            lambda _: baca.text_spanner(
+                _,
+                [r"\default-notehead-markup", "->", r"\half-air-tone-markup"],
+                abjad.Tweak(r"\tweak staff-padding 3"),
+                abjad.Tweak(r"\tweak color #safe-red"),
+                final_piece_spanner=r"\stopTextSpanOne",
+                autodetect_right_padding=False,
+                bookend=True,
+                lilypond_id=1,
+                pieces=lambda _: abjad.select.runs(_),
+            ),
+            abjad.Dynamic("ppp"),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\all-color-music \safe-black", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: baca.text_spanner(
+                _,
+                [r"\default-notehead-markup", "->", r"\half-air-tone-markup"],
+                abjad.Tweak(r"\tweak staff-padding 8"),
+                abjad.Tweak(r"\tweak color #safe-red"),
+                final_piece_spanner=r"\stopTextSpanOne",
+                autodetect_right_padding=False,
+                bookend=True,
+                lilypond_id=1,
+                pieces=lambda _: abjad.select.partition_by_counts(abjad.select.notes(_, grace=False), [2], cyclic=True, overhang=True),
+            ),
+            selector=evans.select_measures([_ for _ in range(14, 16)]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: baca.text_spanner(
+                _,
+                [r"\default-notehead-markup", "->", r"\half-air-tone-markup", "->"],
+                abjad.Tweak(r"\tweak staff-padding 8.5"),
+                abjad.Tweak(r"\tweak color #safe-red"),
+                final_piece_spanner=r"\stopTextSpanOne",
+                autodetect_right_padding=False,
+                bookend=True,
+                lilypond_id=1,
+                pieces=lambda _: abjad.select.get(abjad.select.partition_by_counts(abjad.select.notes(_, grace=False), [2], cyclic=True, overhang=True), [1], period=2),
+            ),
+            selector=evans.select_measures([_ for _ in range(16, 24)]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: baca.text_spanner(
+                _,
+                [
+                    r"\normal-pressure",
+                    "->",
+                    r"\half-pressure",
+                    "->",
+                    r"\normal-pressure",
+                    "->",
+                    r"\half-pressure",
+                    "->",
+                    r"\normal-pressure",
+                    "->",
+                    r"\full-pressure",
+                    "->",
+                    r"\half-pressure",
+                    "->",
+                ],
+                abjad.Tweak(r"\tweak staff-padding 10.5"),
+                abjad.Tweak(r"\tweak color #safe-yellow"),
+                final_piece_spanner=r"\stopTextSpanTwo",
+                autodetect_right_padding=False,
+                bookend=True,
+                lilypond_id=2,
+                pieces=lambda _: abjad.select.get(abjad.select.partition_by_counts(abjad.select.notes(_, grace=False), [2], cyclic=True, overhang=True), [1, 2, 3]),
+            ),
+            selector=evans.select_measures([_ for _ in range(16, 24)]),
+        ),
+        evans.MusicCommand(
+            ("alto flute 3 voice", [17]),
+            evans.accelerando(
+                [(1, 16), (1, 30), (1, 32)],
+                preprocessor=None,
+            ),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 0)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 1)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 2)),
+            lambda _: rmakers.force_rest(abjad.select.leaf(_, 3)),
+            # lambda _: rmakers.force_rest(abjad.select.leaf(_, -1)),
+            # lambda _: rmakers.force_rest(abjad.select.leaf(_, -2)),
+            lambda _: abjad.beam(abjad.select.notes(_)),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\once \override Beam.grow-direction = #RIGHT", site="before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\once \override Staff.Beam.beam-thickness = 1", site="before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.PitchHandler([14]),
+            evans.PitchHandler(
+                [0, "8/5", "2/5", "6/5", "4/5", 2],
+                apply_all=True,
+                apply_all_spelling="sharp",
+            ),
+            lambda _: Infiorescenze.force_accidentals(_),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\stop-explicit-interrupt", site="absolute_before"),
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\start-switch 0.125", site="absolute_before"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\all-color-music \safe-red", site="before"),
+                selector=lambda _: abjad.select.leaf(_, 0),
+            ),
+            lambda _: baca.text_spanner(
+                _,
+                [r"\default-notehead-markup", "->", r"\half-air-tone-markup"],
+                abjad.Tweak(r"\tweak staff-padding 1"),
+                abjad.Tweak(r"\tweak color #safe-red"),
+                final_piece_spanner=r"\stopTextSpanOne",
+                autodetect_right_padding=False,
+                bookend=True,
+                lilypond_id=1,
+                pieces=lambda _: abjad.select.runs(_),
+            ),
+            abjad.Dynamic("ppp"),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\all-color-music \safe-black", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
+        ),
+        evans.MusicCommand(
             ("alto flute 2 voice", (24, 44)),
             evans.subdivided_ties(
                 evans.subdivide_durations(
@@ -239,13 +432,28 @@ maker = evans.SegmentMaker(
                     period=abjad.math.cumulative_sums([4, 3, 4, 3, 8, 11, 10, 8, 7, 3, 3, 8])[-1] + 1,
                     cyclic=True,
                 ),
-                # evans.fuse_durations( # will fuse rests into notes!
-                #     group_sizes=[2],
-                #     boolean_vector=[True],
-                #     cyclic=True,
-                #     overhang=False,
-                #     reversed_=False,
-                # ),
+                evans.subdivide_durations(
+                    cuts=[2, 2, 4, 2, 4],
+                    indices=[0],
+                    period=1,
+                    cyclic=True,
+                ),
+                evans.subdivide_durations(
+                    cuts=[2, 4, 2, 4, 2],
+                    indices=abjad.math.cumulative_sums([6, 2, 1, 1, 4, 4, 6, 6, 1, 4, 3, 3, 1, 6, 6, 1, 5, 5, 3, 1]),
+                    period=abjad.math.cumulative_sums([6, 2, 1, 1, 4, 4, 6, 6, 1, 4, 3, 3, 1, 6, 6, 1, 5, 5, 3, 1])[-1] + 1,
+                    cyclic=True,
+                ),
+                evans.fuse_durations(
+                    group_sizes=[4, 2, 4, 2, 2],
+                    boolean_vector=evans.integer_sequence_to_boolean_vector(
+                        [_ // 2 for _ in [2, 4, 2, 2, 4]],
+                        [abjad.LEFT, abjad.RIGHT],
+                    ),
+                    cyclic=True,
+                    overhang=True,
+                    reversed_=False,
+                ),
                 source_maker=evans.unity_capsule_rhythms(
                     trailing_divisions=[(3, 8), (7, 6)],
                     intercalate_silences_between_groups=True,
@@ -258,12 +466,63 @@ maker = evans.SegmentMaker(
                     yield_silence_duration_per_application_site=True,
                     # show_illustrated_process=True,
                 ),
+                search_tree={
+                2: {
+                    2: {2: {2: None}, 3: {2: None}},
+                    3: {2: {2: None}},
+                    5: {2: {2: None}},
+                    7: None,
+                },
+                3: {
+                    2: {2: {2: None}, 3: {2: None}},
+                    3: {2: {2: None}},
+                    5: {2: None},
+                },
+                5: {
+                    2: {2: None},
+                    3: None,
+                    5: None,
+                },
+                7: {
+                    2: None,
+                    3: None,
+                },
+                11: None,
+                13: None,
+            },
                 treat_tuplets=False,
             ),
-            # evans.note(),
+            lambda _: [
+                rmakers.force_rest(tie) for tie in abjad.select.get(
+                    abjad.select.logical_ties(_, pitched=True),
+                    abjad.math.cumulative_sums([_ * 2 for _ in [4, 3, 6, 3, 7, 4, 5, 2]])[1:],
+                    period=abjad.math.cumulative_sums([_ * 2 for _ in [4, 3, 6, 3, 7, 4, 5, 2]])[-1] + 2,
+                )
+            ],
+            evans.PitchHandler(
+                evans.Sequence(
+                    [11, 10, 2, 3, 7, 6, 8, 4, 5, 0, 1, 9]
+                ).matrix().potamia(columns=True, retrograde=True).flatten()
+            ),
+            lambda _: baca.register(abjad.select.leaves(_), 0),
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.TranspositionHandler(["+P8", "+P1", "+P1", "+P8", "+P1", "+P1", "+P8"]),
+            selector=evans.select_measures([24, 25, 26, 27]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.TranspositionHandler(["+P1", "+P8", "+P1", "+P8", "+P1"]),
+            selector=evans.select_measures([24, 25, 26, 27]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: articulate_gesture(_),
+            selector=evans.select_measures([24, 25, 26, 27]),
         ),
         ### measure-destroying functions
         evans.call(
@@ -293,6 +552,16 @@ maker = evans.SegmentMaker(
             "alto flute 2 voice",
             evans.TranspositionHandler(["+P1", "+P8", "+P1", "+P1", "+P8", "+P1", "+P8", "+P1", "+P1", "+P1", "+P8"]),
             selector=lambda _: abjad.select.notes(evans.select_measures([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23])(_), grace=True),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.ArticulationHandler(["accent", "accent", "staccato", "accent", "staccatissimo"], articulation_boolean_vector=[True, True, False, True, True, True, False, False], direction=abjad.DOWN),
+            selector=lambda _: abjad.select.notes(evans.select_measures([_ for _ in range(16, 24)])(_), grace=True),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.ArticulationHandler(["stopped"], direction=abjad.DOWN),
+            selector=lambda _: abjad.select.notes(evans.select_measures([_ for _ in range(16, 24)])(_), grace=True),
         ),
         ###
         evans.attach(
@@ -469,6 +738,11 @@ maker = evans.SegmentMaker(
             "alto flute 1 voice",
             lambda _: Infiorescenze.cutaway(_),
             selector=lambda _: abjad.select.get(abjad.select.leaves(_, pitched=False), [0, 1, 2]),
+        ),
+        evans.call(
+            "alto flute 3 voice",
+            lambda _: Infiorescenze.cutaway(_),
+            selector=evans.select_measures([9, 10, 11, 16, 18, 19]),
         ),
     ],
     score_template=Infiorescenze.score,

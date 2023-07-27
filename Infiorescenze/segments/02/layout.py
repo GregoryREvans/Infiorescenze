@@ -8,19 +8,19 @@ breaks = evans.Breaks(
     evans.Page(
         evans.System(measures=5, lbsd=(8 - 2, "(11 18)"), x_offset=4),
         evans.System(measures=3, lbsd=(8 + 50, "(7 18)"), x_offset=4),
-        evans.System(measures=4, lbsd=(8 + 50 + 50, "(7)"), x_offset=4),
-        evans.System(measures=4, lbsd=(8 + 50 + 50 + 35, "(7)"), x_offset=4),
+        evans.System(measures=4, lbsd=(8 + 50 + 55, "(7 18)"), x_offset=4),
+    ),
+    evans.Page(
+        evans.System(measures=4, lbsd=(8, "(7)"), x_offset=4),
+        evans.System(measures=4, lbsd=(8 + 35, "(7)"), x_offset=4),
+        evans.System(measures=4, lbsd=(8 + 35 + 35, "(7)"), x_offset=4),
+        evans.System(measures=4, lbsd=(8 + 35 + 35 + 35, "(12)"), x_offset=4),
     ),
     evans.Page(
         evans.System(measures=4, lbsd=(8, "(7)"), x_offset=4),
         evans.System(measures=4, lbsd=(8 + 35, "(7)"), x_offset=4),
         evans.System(measures=4, lbsd=(8 + 35 + 35, "(7)"), x_offset=4),
         evans.System(measures=4, lbsd=(8 + 35 + 35 + 35, "(7)"), x_offset=4),
-    ),
-    evans.Page(
-        evans.System(measures=4, lbsd=(8, "(7)"), x_offset=4),
-        evans.System(measures=4, lbsd=(8 + 35, "(7)"), x_offset=4),
-        evans.System(measures=4, lbsd=(8 + 35 + 35, "(7)"), x_offset=4),
     ),
     time_signatures=Infiorescenze.reduced_signatures_02,
     default_spacing=(1, 75),

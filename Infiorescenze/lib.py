@@ -953,6 +953,8 @@ def cutaway(selections):
                 r"\override Staff.Dots.transparent =  ##t",
                 r"\override Staff.Clef.transparent =  ##t",
                 r"\override Staff.TimeSignature.transparent =  ##t",
+                r"\override Staff.TupletBracket.transparent =  ##t",
+                r"\override Staff.TupletNumber.transparent =  ##t",
             ],
             site="before",
         )
@@ -968,6 +970,8 @@ def cutaway(selections):
                 r"\override Staff.BarLine.transparent = ##f",
                 r"\override Staff.Clef.transparent =  ##f",
                 r"\override Staff.TimeSignature.transparent =  ##f",
+                r"\override Staff.TupletBracket.transparent =  ##f",
+                r"\override Staff.TupletNumber.transparent =  ##f",
             ],
             site="after",
         )
