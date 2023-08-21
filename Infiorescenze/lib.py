@@ -18,13 +18,13 @@ source_speed = 55
 
 fast_tempi = []
 for ratio in sub_ratios:
-    frac_speed = source_speed * ratio
+    frac_speed = int(source_speed * ratio)
     met = abjad.MetronomeMark((1, 8), frac_speed)
     fast_tempi.append(met)
 
 slow_tempi = []
 for ratio in reciprocal_sub_ratios:
-    frac_speed = source_speed * ratio
+    frac_speed = int(source_speed * ratio)
     met = abjad.MetronomeMark((1, 8), frac_speed)
     slow_tempi.append(met)
 
@@ -965,13 +965,13 @@ def cutaway(selections):
         stop_literal = abjad.LilyPondLiteral(
             [
                 r"\startStaff",
-                r"\override Staff.Rest.transparent =  ##f",
-                r"\override Staff.Dots.transparent =  ##f",
-                r"\override Staff.BarLine.transparent = ##f",
-                r"\override Staff.Clef.transparent =  ##f",
-                r"\override Staff.TimeSignature.transparent =  ##f",
-                r"\override Staff.TupletBracket.transparent =  ##f",
-                r"\override Staff.TupletNumber.transparent =  ##f",
+                r"\revert Staff.Rest.transparent",
+                r"\revert Staff.Dots.transparent",
+                r"\revert Staff.BarLine.transparent",
+                r"\revert Staff.Clef.transparent",
+                r"\revert Staff.TimeSignature.transparent",
+                r"\revert Staff.TupletBracket.transparent",
+                r"\revert Staff.TupletNumber.transparent",
             ],
             site="after",
         )
@@ -1092,3 +1092,27 @@ def obgc(selections, counts=[2, 3, 2, 4, 3, 5], grace_duration=(1, 50), default_
             do_not_slur=True,
             font_size=-4,
         )
+
+
+def frullato(selections):
+    for note in abjad.select.notes(selections):
+        start_literal = abjad.LilyPondLiteral(
+            r"\irregularStemOn",
+            site="absolute_before",
+        )
+        stop_literal = abjad.LilyPondLiteral(
+            r"\stemOff",
+            site="absolute_after",
+        )
+        abjad.attach(start_literal, note)
+        abjad.attach(stop_literal, note)
+
+
+numerals = [
+    "१",
+    "२",
+    "३",
+    "४",
+    "५",
+    "६",
+]

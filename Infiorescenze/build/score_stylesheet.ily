@@ -1,4 +1,4 @@
-\version "2.22.1" %2.23.6
+\version "2.23.81" %2.23.6
 \language "english"
 %{ #(set-default-paper-size "a4landscape") % A4
 #(set-global-staff-size 19) %A4 %}
@@ -103,38 +103,52 @@ dashedStaffSymbolLines =
 	title =  \markup \center-column {
 			\line {
 				\override #'(font-name . "Bell MT")
-				\fontsize #1.4 "t o   E r i c - M a r i a  C o u t u r i e r  f o r  M I X T U R  F e s t i v a l"
+				\fontsize #1.4 "t   o       J   o   s   h   u   a       P   a   u   l       S   t   i   n   e"
 			}
+            \line{\fontsize #-1.5 \with-color "white" "." }
             \override #'(font-name . "Bell MT Regular")
             \fontsize #14
             \line {
                 \concat {
-                T
+                I
                 \hspace #2.5
-                o
+                N
                 \hspace #2.5
-                r
+                F
                 \hspace #2.5
-                l
+                I
                 \hspace #2.5
-                a
+                O
                 \hspace #2.5
-                n
+                R
                 \hspace #2.5
-                n
+                E
                 \hspace #2.5
-                o
+                S
                 \hspace #2.5
-                l
+                C
+                \hspace #2.5
+                E
+                \hspace #2.5
+                N
+                \hspace #2.5
+                Z
+                \hspace #2.5
+                E
                 }
             }
-            " "
+            \line{
+				\override #'(font-name . "Bell MT Regular")
+				"o   ,       l   i   b   e   r       a   b   a   c   i"
+			}
+            \line{\fontsize #-1.5 \with-color "white" "." }
             \override #'(font-name . "Bell MT Italic")
             \fontsize #3
             \line {
                 f o r \hspace #2.75
                 s o l o \hspace #2.75
-                v i o l o n c e l l o
+                a l t o \hspace #2.75
+                f l u t e
             }
     }
 	composer = \markup \override #'(font-name . "Bell MT") \fontsize #5 {"Gregory Rowland Evans (*1995)"}

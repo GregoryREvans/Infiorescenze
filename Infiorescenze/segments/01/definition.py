@@ -11,6 +11,14 @@ import Infiorescenze
 
 syllables = evans.CyclicList(["s", "k", "p", "ɬ", "ts", "ps", "ks", "ɸ", "ʃ"], forget=False)
 
+sums = [4 + _ for _ in abjad.math.cumulative_sums([1, 2, 3, 5, 8])]
+arch = evans.Sequence(sums).mirror(sequential_duplicates=False)
+trill_pitches = sums[2:4] * 15
+trill_pitches_ = sums[1:3] * 7
+trill_pitches = trill_pitches + trill_pitches_
+second_trill = trill_pitches + arch
+reconstructed_trill = Infiorescenze.trill_pitches_followed_by_run(arch, 29) + second_trill
+
 maker = evans.SegmentMaker(
     instruments=Infiorescenze.instruments,
     names=[
@@ -114,7 +122,7 @@ maker = evans.SegmentMaker(
                 lilypond_id=2,
                 pieces=lambda _: abjad.select.get(abjad.select.partition_by_counts(abjad.select.notes(_), [7, 5, 4, 6], cyclic=True, overhang=True), [-2]),
             ),
-            evans.ArticulationHandler(["stopped"], forget=False, articulation_boolean_vector=[False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, True, True, True, True, True]),
+            evans.ArticulationHandler(["key-click-plus"], forget=False, articulation_boolean_vector=[False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, True, True, True, True, True]),
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
@@ -184,6 +192,7 @@ maker = evans.SegmentMaker(
                 abjad.get.leaf(abjad.select.leaf(_, 18),
             )
             ),
+            abjad.Markup(r'\boxed-markup-down "arioso" 1'),
         ),
         evans.MusicCommand(
             ("voice voice", [4, 5]),
@@ -196,7 +205,7 @@ maker = evans.SegmentMaker(
                 indices_period=20,
             ),
             lambda _: [abjad.attach(abjad.Markup(rf"\markup {syllables(r=1)[0]}"), target, direction=abjad.DOWN) for target in abjad.select.leaves(_, pitched=True)],
-            abjad.Markup(r'\tweak padding 5 \boxed-markup-down "unvoiced" 1'),
+            abjad.Markup(r'\tweak padding 5 \boxed-markup-down "sorda" 1'),
             # lambda _: Infiorescenze.add_ipa_text(_, seed=2),
             # lambda _: evans.cross_staff(_, "alto flute 1 voice", evans.select_measures([5, 6, 7, 8, 9, 10])),
             # lambda _: evans.long_beam(
@@ -284,6 +293,7 @@ maker = evans.SegmentMaker(
                 [29, 13, 11, 5, 3, 2, 3, 5, 11, 13, 30, 13, 11],
                 direction=abjad.UP,
             ),
+            abjad.Markup(r'\boxed-markup-down "fioritura" 1'),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", [11, 12, 13, 14, 15, 16, 17]),
@@ -358,7 +368,7 @@ maker = evans.SegmentMaker(
                 lilypond_id=3,
                 pieces=lambda _: abjad.select.partition_by_counts(abjad.select.notes(_), [5, 2, 2, 3, 3, 3], cyclic=True, overhang=True),
             ),
-            evans.ArticulationHandler(["stopped"], forget=False, articulation_boolean_vector=[False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, True, True, True, True, True]),
+            evans.ArticulationHandler(["key-click-plus"], forget=False, articulation_boolean_vector=[False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, True, True, True, True, True]),
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
@@ -529,14 +539,14 @@ maker = evans.SegmentMaker(
                 indices_period=abjad.math.cumulative_sums(evans.Sequence([2, 3, 1, 1, 1, 2, 1, 4, 1, 1, 5, 1, 1, 1, 1, 6]).mirror(sequential_duplicates=False))[-1] + 1,
             ),
             evans.BendHandler([1, -1, 1, -1.5, 1, 1.75, -1, 1, -2]),
-            abjad.Markup(r'\tweak padding 3.5 \boxed-markup-down "voiced" 1'),
+            abjad.Markup(r'\tweak padding 3.5 \boxed-markup-down "sonora" 1'),
             lambda _: Infiorescenze.add_ipa_text(_, seed=3, vowels_only=True),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", [18, 19, 20, 21, 22]),
             evans.even_division([32], extra_counts=[1, 2, 3, 2, 1, 0], preprocessor=evans.make_preprocessor(eighths=True)),
             evans.PitchHandler(
-                Infiorescenze.trill_pitches_followed_by_run(evans.Sequence([4 + _ for _ in abjad.math.cumulative_sums([1, 2, 3, 5, 8])]).mirror(sequential_duplicates=False), 29),
+                reconstructed_trill,
                 forget=False,
             ),
             abjad.Dynamic("p"),
@@ -767,6 +777,7 @@ maker = evans.SegmentMaker(
                 _,  beam_rests=True, beam_lone_notes=False
             ),
             abjad.Dynamic("ff"),
+            abjad.Markup(r'\boxed-markup "battaglia" 1'),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", [23, 24, 25]),
@@ -979,7 +990,7 @@ maker = evans.SegmentMaker(
                 abjad.LilyPondLiteral(r"\stop-follow", site="before"),
                 selector=lambda _: abjad.select.note(_, -4),
             ),
-            lambda _: [abjad.attach(abjad.StemTremolo(32), leaf) for leaf in abjad.select.notes(_)],
+            lambda _: [Infiorescenze.frullato(leaf) for leaf in abjad.select.notes(_)],
             abjad.Dynamic("pp"),
             lambda _: evans.long_beam(
                 _,  beam_rests=True, beam_lone_notes=False
@@ -1013,9 +1024,20 @@ maker = evans.SegmentMaker(
                 "accent", "accent",
                 "tenuto", "tenuto", "tenuto", "tenuto",
             ], forget=False, articulation_boolean_vector=[True]),
-            evans.ArticulationHandler(
-                ["tremolo"],
-                articulation_boolean_vector=evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4]),
+            # evans.ArticulationHandler(
+            #     ["tremolo"],
+            #     articulation_boolean_vector=evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4]),
+            # ),
+            evans.Callable(
+                lambda _: [Infiorescenze.frullato(x) for x in _],
+                selector=lambda _: abjad.select.get(
+                    abjad.select.logical_ties(_, pitched=True), evans.boolean_vector_to_indices(
+                        evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4])
+                    ),
+                    period=evans.boolean_vector_to_indices(
+                        evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4])
+                    )[-1]+1
+                    )
             ),
             lambda _: baca.text_spanner(
                 _,
@@ -1152,6 +1174,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
+            abjad.Markup(r'\boxed-markup-down "agitato" 1'),
         ),
         evans.MusicCommand(
             ("alto flute 1 voice", [32, 33, 34]),
@@ -1572,7 +1595,7 @@ maker = evans.SegmentMaker(
                 abjad.LilyPondLiteral(r"\stop-follow", site="before"),
                 selector=lambda _: abjad.select.note(_, -3),
             ),
-            lambda _: [abjad.attach(abjad.StemTremolo(32), leaf) for leaf in abjad.select.notes(_)],
+            lambda _: [Infiorescenze.frullato(leaf) for leaf in abjad.select.notes(_)],
             abjad.Dynamic("pp"),
             lambda _: evans.long_beam(
                 _,  beam_rests=True, beam_lone_notes=False
@@ -1606,9 +1629,20 @@ maker = evans.SegmentMaker(
                 "accent", "accent",
                 "tenuto", "tenuto", "tenuto", "tenuto",
             ], forget=False, articulation_boolean_vector=[True]),
-            evans.ArticulationHandler(
-                ["tremolo"],
-                articulation_boolean_vector=evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4]),
+            # evans.ArticulationHandler(
+            #     ["tremolo"],
+            #     articulation_boolean_vector=evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4]),
+            # ),
+            evans.Callable(
+                lambda _: [Infiorescenze.frullato(x) for x in _],
+                selector=lambda _: abjad.select.get(
+                    abjad.select.logical_ties(_, pitched=True), evans.boolean_vector_to_indices(
+                        evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4])
+                    ),
+                    period=evans.boolean_vector_to_indices(
+                        evans.integer_sequence_to_boolean_vector([2, 2, 4, 2, 6, 2, 4])
+                    )[-1]+1
+                    )
             ),
             lambda _: baca.text_spanner(
                 _,
@@ -1639,6 +1673,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
+            abjad.Markup(r'\boxed-markup-down "animato" 1'),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", [39, 40]),
@@ -1814,7 +1849,7 @@ maker = evans.SegmentMaker(
                 abjad.get.leaf(abjad.select.leaf(_, 20), 1)
             ),
             lambda _: [
-                abjad.attach(abjad.StemTremolo(64), x) for x in abjad.select.get([x[0] for x in abjad.select.logical_ties(
+                Infiorescenze.frullato(x) for x in abjad.select.get([x[0] for x in abjad.select.logical_ties(
                     _, pitched=True)],
                     [2, 3, 7, 8, 9, 10, 16, 17, 18, 19, 20, 27, 28, 29, 30, 31, 32], period=33
                 )
@@ -1825,6 +1860,7 @@ maker = evans.SegmentMaker(
                     [2, 3, 7, 8, 9, 10], period=11
                 )
             ],
+            abjad.Markup(r'\boxed-markup-down "volante" 1'),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", [41, 42, 43, 44, 45, 46, 47, 48, 49]),
@@ -1977,7 +2013,7 @@ maker = evans.SegmentMaker(
                 indices_period=47,
             ),
             evans.BendHandler([2, -2, 1, 4, -5, -1]),
-            abjad.Markup(r'\boxed-markup-down "voiced" 1'),
+            abjad.Markup(r'\boxed-markup-down "sonora" 1'),
             lambda _: Infiorescenze.add_ipa_text(_, seed=6),
         ),
         # evans.call(
@@ -1992,53 +2028,78 @@ maker = evans.SegmentMaker(
         # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 0),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[4],
-            lambda _: abjad.select.leaf(_, 0),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 6),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[5],
-            lambda _: abjad.select.leaf(_, 6),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 11),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[4],
-            lambda _: abjad.select.leaf(_, 11),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 18),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[5],
-            lambda _: abjad.select.leaf(_, 18),
-        ),
-        evans.attach(
-            "Global Context",
             Infiorescenze.fast_tempi_literals[3], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 23),
+            lambda _: abjad.select.leaf(_, 0),
         ),
         evans.attach(
             "Global Context",
             Infiorescenze.fast_tempi[3],
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "1" "अ" "α" "`C" "{Infiorescenze.numerals[3]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
+            lambda _: abjad.select.leaf(_, 6),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi[4],
+            lambda _: abjad.select.leaf(_, 6),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "1" "इ" "β" "`C" "{Infiorescenze.numerals[4]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 6),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi_literals[3], # 1 2 3 (4) 5 > (1) 2 3 4 5
+            lambda _: abjad.select.leaf(_, 11),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi[3],
+            lambda _: abjad.select.leaf(_, 11),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "1" "उ" "{{βγ}}" "`C" "{Infiorescenze.numerals[3]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 11),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
+            lambda _: abjad.select.leaf(_, 18),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi[4],
+            lambda _: abjad.select.leaf(_, 18),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "2" "अ" "β" "`C" "{Infiorescenze.numerals[4]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 18),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi_literals[2], # 1 2 3 (4) 5 > (1) 2 3 4 5
             lambda _: abjad.select.leaf(_, 23),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi[2],
+            lambda _: abjad.select.leaf(_, 23),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "2" "इ" "{{δε}}" "`F" "{Infiorescenze.numerals[2]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 23),
         ),
         evans.attach(
             "Global Context",
@@ -2052,6 +2113,11 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "2" "उ" "δ" "`G" "{Infiorescenze.numerals[1]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 26),
+        ),
+        evans.attach(
+            "Global Context",
             Infiorescenze.fast_tempi_literals[2], # 1 2 3 (4) 5 > (1) 2 3 4 5
             lambda _: abjad.select.leaf(_, 32),
         ),
@@ -2062,13 +2128,23 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi_literals[0], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 35),
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "2" "ऋ" "{{εβ}}" "`G" "{Infiorescenze.numerals[2]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 32),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi_literals[0], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 35),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi[0],
+        #     lambda _: abjad.select.leaf(_, 35),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi[0],
-            lambda _: abjad.select.leaf(_, 35),
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "3" "अ" "δ" "`G" "{Infiorescenze.numerals[2]}" 2'), #
+            selector=lambda _: abjad.select.leaf(_, 35),
         ),
         evans.attach(
             "Global Context",
@@ -2082,77 +2158,37 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 41),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[5],
-            lambda _: abjad.select.leaf(_, 41),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 44),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.fast_tempi[4],
-            lambda _: abjad.select.leaf(_, 44),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "1" "अ" "α" "`C" "५" 2'),
-            selector=lambda _: abjad.select.leaf(_, 0),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "1" "इ" "β" "`C" "६" 2'),
-            selector=lambda _: abjad.select.leaf(_, 6),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "1" "उ" "{βγ}" "`C" "५" 2'),
-            selector=lambda _: abjad.select.leaf(_, 11),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "2" "अ" "β" "`C" "६" 2'),
-            selector=lambda _: abjad.select.leaf(_, 18),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "2" "इ" "{δε}" "`F" "४" 2'),
-            selector=lambda _: abjad.select.leaf(_, 23),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "2" "उ" "δ" "`G" "२" 2'),
-            selector=lambda _: abjad.select.leaf(_, 26),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "2" "ऋ" "{εβ}" "`G" "३" 2'),
-            selector=lambda _: abjad.select.leaf(_, 32),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "3" "अ" "δ" "`G" "१" 2'), #
-            selector=lambda _: abjad.select.leaf(_, 35),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "3" "इ" "γ" "`G" "४" 2'),
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "3" "इ" "γ" "`G" "{Infiorescenze.numerals[3]}" 2'),
             selector=lambda _: abjad.select.leaf(_, 39),
         ),
         evans.attach(
             "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "3" "उ" "ζ" "`G" "६" 2'),
-            selector=lambda _: abjad.select.leaf(_, 41),
+            Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
+            lambda _: abjad.select.leaf(_, 41),
         ),
         evans.attach(
             "Global Context",
-            abjad.Markup(r'\material-label-markup "I" "ᚠ" "3" "ऋ" "ζ" "`G" "५" 2'),
+            Infiorescenze.fast_tempi[4],
+            lambda _: abjad.select.leaf(_, 41),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "3" "उ" "ζ" "`G" "{Infiorescenze.numerals[4]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 41),
+        ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 44),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi[4],
+        #     lambda _: abjad.select.leaf(_, 44),
+        # ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "I" "ᚠ" "3" "ऋ" "ζ" "`G" "{Infiorescenze.numerals[4]}" 2'),
             selector=lambda _: abjad.select.leaf(_, 44),
         ),
         # evans.call(
@@ -2238,7 +2274,7 @@ maker = evans.SegmentMaker(
         evans.call(
             "voice voice",
             lambda _: Infiorescenze.cutaway(_),
-            selector=lambda _: _,
+            selector=evans.select_measures([_ for _ in range(0, 50)])
         ),
         evans.call(
             "alto flute 1 voice",

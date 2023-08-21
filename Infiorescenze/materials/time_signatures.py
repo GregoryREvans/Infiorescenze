@@ -88,6 +88,52 @@ reduced_signatures_02 = evans.reduce_fermata_measures(
     signatures_02, fermata_measures_02
 )
 
+
+##
+## 03 ##
+##
+
+signatures_03 = evans.CyclicList(time_signature_series["A"], forget=False)(r=54)
+assert len(signatures_03) == 54
+
+signatures_03.append(abjad.TimeSignature((1, 8)))  # for ending skip
+
+fermata_measures_03 = []
+
+reduced_signatures_03 = evans.reduce_fermata_measures(
+    signatures_03, fermata_measures_03
+)
+
+##
+## 04 ##
+##
+
+signatures_04 = evans.CyclicList(time_signature_series["B"], forget=False)(r=45)
+assert len(signatures_04) == 45
+
+signatures_04.append(abjad.TimeSignature((1, 8)))  # for ending skip
+
+fermata_measures_04 = []
+
+reduced_signatures_04 = evans.reduce_fermata_measures(
+    signatures_04, fermata_measures_04
+)
+
+##
+## 05 ##
+##
+
+signatures_05 = evans.CyclicList(time_signature_series["C"], forget=False)(r=37)
+assert len(signatures_05) == 37
+
+signatures_05.append(abjad.TimeSignature((1, 8)))  # for ending skip
+
+fermata_measures_05 = [36]
+
+reduced_signatures_05 = evans.reduce_fermata_measures(
+    signatures_05, fermata_measures_05
+)
+
 ##
 ## total ##
 ##
@@ -96,5 +142,8 @@ all_signatures = evans.join_time_signature_lists(
     [
         reduced_signatures_01,
         reduced_signatures_02,
+        reduced_signatures_03,
+        reduced_signatures_04,
+        reduced_signatures_05,
     ]
 )

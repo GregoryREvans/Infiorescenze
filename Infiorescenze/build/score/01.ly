@@ -6,17 +6,17 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"110"
+                \tempo 8=96
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 3/8
                 s1 * 3/8
-                - \material-label-markup "I" "ᚠ" "1" "अ" "α" "`C" "५" 2
+                - \material-label-markup "I" "ᚠ" "1" "अ" "α" "`C" "४" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
+                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
                   }
                 }
 
@@ -58,16 +58,16 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 7]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                \tempo 8=110
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
-                - \material-label-markup "I" "ᚠ" "1" "इ" "β" "`C" "६" 2
+                - \material-label-markup "I" "ᚠ" "1" "इ" "β" "`C" "५" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
                   }
                 }
 
@@ -102,16 +102,16 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 12]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"110"
+                \tempo 8=96
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
-                - \material-label-markup "I" "ᚠ" "1" "उ" "{βγ}" "`C" "५" 2
+                - \material-label-markup "I" "ᚠ" "1" "उ" "{βγ}" "`C" "४" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
+                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
                   }
                 }
 
@@ -160,16 +160,16 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 19]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                \tempo 8=110
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
-                - \material-label-markup "I" "ᚠ" "2" "अ" "β" "`C" "६" 2
+                - \material-label-markup "I" "ᚠ" "2" "अ" "β" "`C" "५" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
                   }
                 }
 
@@ -204,16 +204,16 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 24]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
+                \tempo 8=82
                   %! scaling time signatures
                 \time 8/8
                 s1 * 1
-                - \material-label-markup "I" "ᚠ" "2" "इ" "{δε}" "`F" "४" 2
+                - \material-label-markup "I" "ᚠ" "2" "इ" "{δε}" "`F" "३" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
+                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"82" #"1" #"2"
                   }
                 }
 
@@ -234,7 +234,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 27]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"68" #"3" #"4"
+                \tempo 8=68
                   %! scaling time signatures
                 \time 9/8
                 s1 * 9/8
@@ -285,7 +285,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 33]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"82" #"1" #"2"
+                \tempo 8=82
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
@@ -315,18 +315,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 36]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"55"
                   %! scaling time signatures
                 \time 2/8
                 s1 * 1/4
-                - \material-label-markup "I" "ᚠ" "3" "अ" "δ" "`G" "१" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"55"
-                  }
-                }
+                - \material-label-markup "I" "ᚠ" "3" "अ" "δ" "`G" "३" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -352,7 +344,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 40]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
+                \tempo 8=96
                   %! scaling time signatures
                 \time 2/8
                 s1 * 1/4
@@ -375,16 +367,16 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 42]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                \tempo 8=110
                   %! scaling time signatures
                 \time 2/8
                 s1 * 1/4
-                - \material-label-markup "I" "ᚠ" "3" "उ" "ζ" "`G" "६" 2
+                - \material-label-markup "I" "ᚠ" "3" "उ" "ζ" "`G" "५" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
+                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
                   }
                 }
 
@@ -405,18 +397,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 45]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"110"
                   %! scaling time signatures
                 \time 3/8
                 s1 * 3/8
                 - \material-label-markup "I" "ᚠ" "3" "ऋ" "ζ" "`G" "५" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"110"
-                  }
-                }
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -600,6 +584,8 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r2
                                         \override Staff.BarLine.transparent = ##t
 
@@ -617,11 +603,13 @@
 
                                         r8
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         {
 
@@ -638,6 +626,7 @@
                                                 c'64
                                                 - \staccatissimo
                                                 \ff
+                                                - \boxed-markup "battaglia" 1
                                                 ^ [
 
                                                 f'64
@@ -892,6 +881,8 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r1
                                         \override Staff.BarLine.transparent = ##t
 
@@ -922,11 +913,13 @@
                                         % [alto flute 1 voice measure 32]
                                         r2
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         {
 
@@ -1211,14 +1204,18 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r4
                                         \override Staff.BarLine.transparent = ##t
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1334,6 +1331,7 @@
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.hairpin()
                                                 \p
+                                                - \boxed-markup-down "arioso" 1
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
@@ -1396,7 +1394,7 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [alto flute 2 voice measure 2]
                                             fs'8
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
                                             _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
@@ -1405,19 +1403,19 @@
                                             {
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
@@ -1430,7 +1428,7 @@
                                         {
 
                                             fs'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
@@ -1587,7 +1585,7 @@
                                         \<
 
                                         fs'4..
-                                        - \stopped
+                                        - \key-click-plus
                                         - \tweak color #safe-pink
                                         - \tweak font-size #-5.5
                                         _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
@@ -1601,7 +1599,7 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 4]
                                         fs'4
-                                        - \stopped
+                                        - \key-click-plus
                                         - \tweak color #safe-pink
                                         - \tweak font-size #-5.5
                                         _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
@@ -1640,7 +1638,7 @@
                                         \slow-fast-flute-heel
 
                                         fs'4
-                                        - \stopped
+                                        - \key-click-plus
                                         - \tweak color #safe-pink
                                         - \tweak font-size #-5.5
                                         _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
@@ -1663,7 +1661,7 @@
                                                 \set stemLeftBeamCount = 4
                                                 \set stemRightBeamCount = 4
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.hairpin()
@@ -1683,7 +1681,7 @@
                                                 \>
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
@@ -1770,13 +1768,13 @@
                                             }
 
                                             fs'8.
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
                                             _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
                                             fs'8.
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
                                             _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
@@ -1785,7 +1783,7 @@
                                             {
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.hairpin()
@@ -1807,13 +1805,13 @@
                                                 \<
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
                                                 fs'64
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tweak color #safe-pink
                                                 - \tweak font-size #-5.5
                                                 _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
@@ -1992,7 +1990,7 @@
                                             }
 
                                             fs'4..
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
                                             _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
@@ -2000,7 +1998,7 @@
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 3
                                             fs'32
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
                                             _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
@@ -2019,7 +2017,7 @@
                                             \stopTextSpanOne
 
                                             fs'32
-                                            - \stopped
+                                            - \key-click-plus
                                             \!
                                             - \tweak color #safe-pink
                                             - \tweak font-size #-5.5
@@ -2041,6 +2039,7 @@
                                                 \voiceTwo
                                                 e'32
                                                 \p
+                                                - \boxed-markup-down "fioritura" 1
                                                 _ [
                                                   %! SPANNER_START
                                                   %! baca.PiecewiseCommand._call(2)
@@ -3177,7 +3176,7 @@
                                             e'128
 
                                             f'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3205,7 +3204,7 @@
 
                                             \afterGrace 1/16
                                             e'8
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
@@ -3225,7 +3224,7 @@
                                         {
 
                                             f'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3277,7 +3276,7 @@
                                             \stopTrillSpan
 
                                             e'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3308,7 +3307,7 @@
                                             \startTextSpanOne
 
                                             f'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3532,13 +3531,13 @@
                                             \startTextSpanThree
 
                                             f'256
-                                            - \stopped
+                                            - \key-click-plus
 
                                         }
 
                                         \afterGrace 1/16
                                         e'8
-                                        - \stopped
+                                        - \key-click-plus
                                         ~
                                         {
                                              \suggest-pitch-open  eqs'32 \startTripleTrill #15 #14 #13      \suggest-pitch-middle  f'32     \suggest-pitch-close  fqs'32}
@@ -3597,7 +3596,7 @@
                                         {
 
                                             f'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
@@ -3609,7 +3608,7 @@
                                             \stopTripleTrill
 
                                             e'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3640,7 +3639,7 @@
                                             \startTextSpanOne
 
                                             f'128
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3718,7 +3717,7 @@
                                         % [alto flute 2 voice measure 13]
                                         \vibrato #'(0 1 4 2) #2 #0.2
                                         f'4
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3811,7 +3810,7 @@
                                         \startTextSpanTwo
 
                                         g'128
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3842,7 +3841,7 @@
                                         \startTextSpanThree
 
                                         bf'128
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.hairpin()
@@ -3853,7 +3852,7 @@
                                         \>
 
                                         ef''128
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3886,7 +3885,7 @@
                                         \set stemLeftBeamCount = 5
                                         \set stemRightBeamCount = 5
                                         b''128
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -4121,7 +4120,7 @@
                                                     \startTextSpanTwo
 
                                                     f'32
-                                                    - \stopped
+                                                    - \key-click-plus
                                                       %! SPANNER_STOP
                                                       %! baca.PiecewiseCommand._call(2)
                                                       %! baca.text_spanner()
@@ -4152,7 +4151,7 @@
                                                     \startTextSpanOne
 
                                                     e'32
-                                                    - \stopped
+                                                    - \key-click-plus
                                                       %! SPANNER_STOP
                                                       %! baca.PiecewiseCommand._call(2)
                                                       %! baca.hairpin()
@@ -4172,7 +4171,7 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 16]
                                         f'16
-                                        - \stopped
+                                        - \key-click-plus
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -4202,10 +4201,10 @@
                                         {
 
                                             e'64
-                                            - \stopped
+                                            - \key-click-plus
 
                                             f'64
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4363,7 +4362,7 @@
 
                                             \vibrato #'(0 1 4 2) #2 #0.2
                                             b''4
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4400,7 +4399,7 @@
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 3
                                             ef''32
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4460,7 +4459,7 @@
                                             \startTextSpanThree
 
                                             bf'32
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4487,10 +4486,10 @@
                                             \startTextSpanTwo
 
                                             g'32
-                                            - \stopped
+                                            - \key-click-plus
 
                                             f'32
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
@@ -4687,7 +4686,7 @@
 
                                                 \vibrato #'(0 1 3 4 2 4) #2 #0.2
                                                 f'8
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -4754,7 +4753,7 @@
                                                 \set stemRightBeamCount = 1
                                                 \vibrato #'(0 1 4 2) #2 #0.2
                                                 g'8
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca._do_spanner_indicator_command(2)
                                                   %! baca.trill_spanner()
@@ -4773,7 +4772,7 @@
 
                                             \vibrato #'(0 1 4 2 0) #2 #0.2
                                             bf'4
-                                            - \stopped
+                                            - \key-click-plus
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4826,7 +4825,7 @@
                                                 \set stemLeftBeamCount = 6
                                                 \set stemRightBeamCount = 6
                                                 ef''256
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -4858,7 +4857,7 @@
                                                 \startTextSpanTwo
 
                                                 b''256
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -4982,7 +4981,7 @@
 
                                             \vibrato #'(0 1 4 2 5) #2 #0.2
                                             f'8
-                                            - \stopped
+                                            - \key-click-plus
                                             ~
                                               %! SPANNER_START
                                               %! baca._do_spanner_indicator_command(1)
@@ -4999,7 +4998,7 @@
                                             {
 
                                                 e'16
-                                                - \stopped
+                                                - \key-click-plus
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -5069,7 +5068,7 @@
                                                 \startTextSpanTwo
 
                                                 f'64
-                                                - \stopped
+                                                - \key-click-plus
 
                                             }
 
@@ -5081,7 +5080,7 @@
                                                 {
 
                                                     e'64
-                                                    - \stopped
+                                                    - \key-click-plus
                                                       %! SPANNER_STOP
                                                       %! baca.PiecewiseCommand._call(2)
                                                       %! baca.text_spanner()
@@ -5120,7 +5119,7 @@
                                                     \startTextSpanThree
 
                                                     f'64
-                                                    - \stopped
+                                                    - \key-click-plus
                                                       %! SPANNER_STOP
                                                       %! baca.PiecewiseCommand._call(2)
                                                       %! baca.hairpin()
@@ -5430,17 +5429,17 @@
                                                 \times 2/3
                                                 {
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
                                                 }
 
@@ -5448,19 +5447,19 @@
                                                 \times 8/7
                                                 {
 
-                                                    e'64
+                                                    g'64
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
                                                     r64
 
-                                                    e'64
+                                                    g'64
 
-                                                    f'64
+                                                    bf'64
 
-                                                    e'64
+                                                    g'64
 
-                                                    f'64
+                                                    bf'64
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
@@ -5474,82 +5473,82 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice temp measure 21]
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
-
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
-
-                                                    e'32
-
-                                                    f'32
+                                                    g'32
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
                                                     r32
-
-                                                }
-
-                                                \times 4/5
-                                                {
-
-                                                    f'32
-
-                                                    e'32
-
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
-
-                                                    e'32
-
-                                                    f'32
-
-                                                }
-
-                                                e'32
-
-                                                f'32
-
-                                                \once \override Voice.Stem.stemlet-length = #0
-                                                \once \hide Voice.Rest
-                                                r32
-
-                                                f'32
-
-                                                \times 4/5
-                                                {
-
-                                                    e'32
-
-                                                    f'32
 
                                                     g'32
 
                                                     bf'32
 
-                                                    ef''32
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    bf'32
+
+                                                    g'32
+
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                    g'32
+
+                                                    bf'32
+
+                                                }
+
+                                                g'32
+
+                                                bf'32
+
+                                                \once \override Voice.Stem.stemlet-length = #0
+                                                \once \hide Voice.Rest
+                                                r32
+
+                                                bf'32
+
+                                                \times 4/5
+                                                {
+
+                                                    g'32
+
+                                                    bf'32
+
+                                                    f'32
+
+                                                    g'32
+
+                                                    f'32
 
                                                 }
 
                                                 \times 2/3
                                                 {
 
-                                                    b''32
+                                                    g'32
 
-                                                    ef''32
-
-                                                    bf'32
+                                                    f'32
 
                                                     g'32
+
+                                                    f'32
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
                                                     r32
 
-                                                    e'32
+                                                    f'32
 
                                                 }
 
@@ -5560,15 +5559,15 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice temp measure 22]
-                                                    f'64
-
-                                                    e'64
+                                                    g'64
 
                                                     f'64
 
-                                                    e'64
+                                                    g'64
 
                                                     f'64
+
+                                                    g'64
 
                                                     e'64
 
@@ -5578,81 +5577,81 @@
 
                                                 \times 2/3
                                                 {
-
-                                                    e'32
-
-                                                    f'32
-
-                                                    e'32
-
-                                                    f'32
-
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
-
-                                                    f'32
-
-                                                }
-
-                                                \times 4/5
-                                                {
-
-                                                    e'32
-
-                                                    f'32
-
-                                                    e'32
-
-                                                    f'32
-
-                                                    e'32
-
-                                                }
-
-                                                f'32
-
-                                                e'32
-
-                                                f'32
-
-                                                e'32
-
-                                                \times 4/5
-                                                {
-
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
-
-                                                    e'32
-
-                                                    f'32
-
-                                                    e'32
-
-                                                    f'32
-
-                                                }
-
-                                                \times 2/3
-                                                {
-
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
-
-                                                    f'32
 
                                                     g'32
 
-                                                    \once \override Voice.Stem.stemlet-length = #0
-                                                    \once \hide Voice.Rest
-                                                    r32
+                                                    bf'32
 
                                                     ef''32
 
                                                     b''32
+
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                    bf'32
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    g'32
+
+                                                    f'32
+
+                                                    e'32
+
+                                                    f'32
+
+                                                    e'32
+
+                                                }
+
+                                                f'32
+
+                                                e'32
+
+                                                f'32
+
+                                                e'32
+
+                                                \times 4/5
+                                                {
+
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                    e'32
+
+                                                    f'32
+
+                                                    e'32
+
+                                                    f'32
+
+                                                }
+
+                                                \times 2/3
+                                                {
+
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                    f'32
+
+                                                    e'32
+
+                                                    \once \override Voice.Stem.stemlet-length = #0
+                                                    \once \hide Voice.Rest
+                                                    r32
+
+                                                    e'32
+
+                                                    f'32
 
                                                 }
 
@@ -5664,9 +5663,9 @@
                                                     \once \hide Voice.Rest
                                                     r64
 
-                                                    bf'64
+                                                    f'64
 
-                                                    g'64
+                                                    e'64
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
@@ -5698,62 +5697,62 @@
 
                                                     f'32
 
-                                                    e'32
+                                                    g'32
 
                                                 }
 
                                                 \times 4/5
                                                 {
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    ef''32
 
-                                                    f'32
+                                                    b''32
 
-                                                    e'32
+                                                    ef''32
 
-                                                    f'32
+                                                    bf'32
 
                                                 }
 
-                                                e'32
+                                                g'32
 
                                                 \once \override Voice.Stem.stemlet-length = #0
                                                 \once \hide Voice.Rest
                                                 r32
 
-                                                e'32
+                                                g'32
 
-                                                f'32
+                                                bf'32
 
                                                 \times 4/5
                                                 {
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
                                                 }
 
                                                 \times 2/3
                                                 {
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
-                                                    e'32
+                                                    g'32
 
-                                                    f'32
+                                                    bf'32
 
                                                     \once \override Voice.Stem.stemlet-length = #0
                                                     \once \hide Voice.Rest
@@ -5946,7 +5945,7 @@
                                                     \set stemLeftBeamCount = 4
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 4
-                                                    f'64
+                                                    bf'64
                                                     ^ \sfz
 
                                                     s64
@@ -5961,7 +5960,7 @@
                                                     \set stemLeftBeamCount = 4
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 1
-                                                    e'64
+                                                    g'64
                                                     ^ \sfz
 
                                                 }
@@ -5980,7 +5979,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 3
-                                                    f'32
+                                                    bf'32
                                                     ^ \sfz
 
                                                     s32
@@ -5991,7 +5990,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 1
-                                                    e'32
+                                                    g'32
                                                     ^ \sfz
 
                                                 }
@@ -6007,7 +6006,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 3
-                                                    f'32
+                                                    bf'32
                                                     ^ \sfz
 
                                                     s32
@@ -6020,7 +6019,7 @@
 
                                                 s32
 
-                                                e'32
+                                                g'32
                                                 ^ \sfz
 
                                                 s32
@@ -6055,7 +6054,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 3
-                                                    f'32
+                                                    g'32
                                                     ^ \sfz
 
                                                     s32
@@ -6100,7 +6099,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 3
-                                                    e'32
+                                                    ef''32
                                                     ^ \sfz
 
                                                     s32
@@ -6168,7 +6167,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 3
-                                                    bf'32
+                                                    f'32
                                                     ^ \sfz
 
                                                     s32
@@ -6185,7 +6184,7 @@
                                                     \set stemLeftBeamCount = 1
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 4
-                                                    ef''64
+                                                    e'64
                                                     ^ \sfz
 
                                                     s64
@@ -6288,7 +6287,7 @@
                                                     \set stemLeftBeamCount = 3
                                                       %! rmakers.beam_groups()
                                                     \set stemRightBeamCount = 0
-                                                    e'32
+                                                    g'32
                                                     ^ \sfz
                                                     )
                                                       %! SPANNER_STOP
@@ -6597,6 +6596,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
                                             \pp
+                                            - \boxed-markup-down "agitato" 1
                                             ^ [
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -6647,16 +6647,17 @@
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             cqs'8
-                                            :32
                                             - \tenuto
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                             \vibrato #'(0 1 4 2) #2 #0.2
                                             \tweak Accidental.stencil ##f
@@ -6730,11 +6731,11 @@
                                         \times 4/5
                                         {
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             cs'8.
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -6748,6 +6749,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
                                             \<
+                                            \stemOff
 
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
@@ -6883,11 +6885,11 @@
                                               %! abjad.glissando(7)
                                             \glissando
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             dqf'8
-                                            :32
                                             - \tenuto
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -6941,6 +6943,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
+                                            \stemOff
 
                                         }
 
@@ -6957,12 +6960,12 @@
                                               %! abjad.glissando(7)
                                             \glissando
 
+                                            \irregularStemOn
                                             \vibrato #'(0 1 4 2) #2 #0.2
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             d'16
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -7032,6 +7035,7 @@
                                               %! baca._do_spanner_indicator_command(1)
                                               %! baca.trill_spanner()
                                             \startTrillSpan
+                                            \stemOff
 
                                         }
 
@@ -7161,13 +7165,13 @@
                                               %! baca.hairpin()
                                             \>
 
+                                            \irregularStemOn
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 2
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             dqs'16
-                                            :32
                                             - \tenuto
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -7230,6 +7234,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
+                                            \stemOff
 
                                         }
 
@@ -7239,11 +7244,11 @@
                                             dqs'4
                                             - \accent
 
+                                            \irregularStemOn
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 2
                                             \vibrato #'(0 5 1 4 2) #2 #0.2
                                             dqf'16
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -7303,18 +7308,20 @@
                                               %! baca._do_spanner_indicator_command(1)
                                               %! baca.trill_spanner()
                                             \startTrillSpan
+                                            \stemOff
 
                                         }
 
+                                        \irregularStemOn
                                         \tweak Accidental.stencil ##f
                                         \tweak X-extent #'(0 . 0)
                                         \tweak transparent ##t
                                         dqf'16
-                                        :32
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
+                                        \stemOff
 
                                         \tweak Accidental.stencil ##f
                                         \tweak X-extent #'(0 . 0)
@@ -7450,13 +7457,14 @@
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
 
+                                            \irregularStemOn
                                             ef'8
-                                            :32
                                             - \tenuto
                                               %! SPANNER_STOP
                                               %! baca._do_spanner_indicator_command(2)
                                               %! baca.trill_spanner()
                                             \stopTrillSpan
+                                            \stemOff
 
                                             \vibrato #'(0 1 4 2 6 7) #2 #0.2
                                             d'16
@@ -7533,11 +7541,11 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \irregularStemOn
                                         \tweak Accidental.stencil ##f
                                         \tweak X-extent #'(0 . 0)
                                         \tweak transparent ##t
                                         dqs'16
-                                        :32
                                         - \tenuto
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
@@ -7595,6 +7603,7 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
+                                        \stemOff
 
                                         \times 2/3
                                         {
@@ -7617,6 +7626,7 @@
                                               %! baca.hairpin()
                                             \<
 
+                                            \irregularStemOn
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
                                             \vibrato #'(0 1 4 2) #2 #0.2
@@ -7624,7 +7634,6 @@
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             ef'8
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -7695,6 +7704,7 @@
                                               %! baca._do_spanner_indicator_command(1)
                                               %! baca.trill_spanner()
                                             \startTrillSpan
+                                            \stemOff
 
                                         }
 
@@ -7781,9 +7791,9 @@
                                           %! baca.hairpin()
                                         \>
 
+                                        \irregularStemOn
                                         \vibrato #'(0 1 4 2) #2 #0.2
                                         cs'8.
-                                        :32
                                         - \tenuto
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
@@ -7850,19 +7860,21 @@
                                           %! baca._do_spanner_indicator_command(1)
                                           %! baca.trill_spanner()
                                         \startTrillSpan
+                                        \stemOff
 
                                         \times 2/3
                                         {
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             cs'16
-                                            :32
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
@@ -7934,16 +7946,17 @@
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             d'8
-                                            :32
                                             - \accent
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
@@ -8139,16 +8152,17 @@
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             dqs'16
-                                            :32
                                             - \tenuto
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                             ef'32
                                             - \accent
@@ -8423,6 +8437,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
                                             \pp
+                                            - \boxed-markup-down "animato" 1
                                             ^ [
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -8453,16 +8468,17 @@
                                               %! baca.text_spanner()
                                             \startTextSpanThree
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             cqs'8
-                                            :32
                                             - \tenuto
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
@@ -8506,11 +8522,11 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [alto flute 2 voice measure 37]
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             cs'8.
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -8524,6 +8540,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
                                             \<
+                                            \stemOff
 
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
@@ -8594,11 +8611,11 @@
                                               %! abjad.glissando(7)
                                             \glissando
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             dqf'8
-                                            :32
                                             - \tenuto
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -8628,6 +8645,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanThree
+                                            \stemOff
 
                                         }
 
@@ -8644,8 +8662,8 @@
                                               %! abjad.glissando(7)
                                             \glissando
 
+                                            \irregularStemOn
                                             d'8
-                                            :32
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -8679,6 +8697,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanThree
+                                            \stemOff
 
                                             cs'16
                                             - \tenuto
@@ -8798,8 +8817,8 @@
                                         \times 4/5
                                         {
 
+                                            \irregularStemOn
                                             dqs'8
-                                            :32
                                             - \tenuto
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(2)
@@ -8809,6 +8828,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.hairpin()
                                             \<
+                                            \stemOff
 
                                             dqf'8
                                             - \accent
@@ -8853,16 +8873,17 @@
                                               %! baca.text_spanner()
                                             \startTextSpanThree
 
+                                            \irregularStemOn
                                             \tweak Accidental.stencil ##f
                                             \tweak X-extent #'(0 . 0)
                                             \tweak transparent ##t
                                             d'16
-                                            :32
                                             - \accent
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
+                                            \stemOff
 
                                         }
 
@@ -8908,8 +8929,8 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \irregularStemOn
                                         ef'16
-                                        :32
                                         - \tenuto
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(2)
@@ -8917,6 +8938,7 @@
                                         \stopTextSpanThree
                                         ]
                                         \revert-noteheads
+                                        \stemOff
 
                                         \times 2/3
                                         {
@@ -8926,6 +8948,7 @@
                                             % [alto flute 2 voice measure 40]
                                             eqs''4
                                             \f
+                                            - \boxed-markup-down "volante" 1
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -9004,13 +9027,15 @@
                                               %! baca.hairpin()
                                             \<
 
+                                            \irregularStemOn
                                             ef'64
-                                            :64
                                             - \accent
+                                            \stemOff
 
+                                            \irregularStemOn
                                             eqs'''64
-                                            :64
                                             - \accent
+                                            \stemOff
 
                                             bqf'64
 
@@ -9030,16 +9055,18 @@
 
                                                 c''''32
 
+                                                \irregularStemOn
                                                 fs'32
-                                                :64
                                                 - \accent
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 gqs'''32
-                                                :64
                                                 - \accent
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 c'32
-                                                :64
                                                 - \accent
                                                   %! SPANNER_STOP
                                                   %! baca.PiecewiseCommand._call(3)
@@ -9050,13 +9077,14 @@
                                                   %! baca.PiecewiseCommand._call(3)
                                                   %! baca.text_spanner()
                                                 \stopTextSpanTwo
+                                                \stemOff
 
                                             }
 
+                                            \irregularStemOn
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
                                             dqf'8
-                                            :64
                                             - \accent
                                             ]
                                               %! SPANNER_START
@@ -9079,6 +9107,7 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanOne
+                                            \stemOff
 
                                             \times 4/5
                                             {
@@ -9152,11 +9181,12 @@
 
                                                     a'32
 
+                                                    \irregularStemOn
                                                     gqs'''32
-                                                    :64
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     dqf''32
-                                                    :64
                                                       %! SPANNER_STOP
                                                       %! baca.PiecewiseCommand._call(3)
                                                       %! baca.hairpin()
@@ -9166,13 +9196,14 @@
                                                       %! baca.PiecewiseCommand._call(3)
                                                       %! baca.text_spanner()
                                                     \stopTextSpanTwo
+                                                    \stemOff
 
                                                 }
 
                                             }
 
+                                            \irregularStemOn
                                             bqf'''8
-                                            :64
                                             - \accent
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
@@ -9199,9 +9230,10 @@
                                             - \tweak details.squiggle-speed-factor -0.6
                                             - \tweak thickness 3
                                             \slow-fast-smorzando
+                                            \stemOff
 
+                                            \irregularStemOn
                                             c''8
-                                            :64
                                             - \accent
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(4)
@@ -9213,6 +9245,7 @@
                                             - \tweak details.squiggle-speed-factor 0.2
                                             - \tweak thickness 3
                                             \slow-fast-smorzando
+                                            \stemOff
 
                                         }
 
@@ -9985,6 +10018,8 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r2
                                         \override Staff.BarLine.transparent = ##t
 
@@ -10002,11 +10037,13 @@
 
                                         r8
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         {
 
@@ -10021,50 +10058,58 @@
                                                 r8
                                                 ^ [
 
+                                                \irregularStemOn
                                                 b'8
-                                                :32
                                                 \pp
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 bf'8
-                                                :32
+                                                \stemOff
 
                                             }
 
+                                            \irregularStemOn
                                             \interrupt
                                             d'8
-                                            :32
+                                            \stemOff
 
+                                            \irregularStemOn
                                             \interrupt
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 2
                                             ef'16
-                                            :32
                                             ]
+                                            \stemOff
 
+                                            \irregularStemOn
                                             \interrupt
                                             g'4
-                                            :32
+                                            \stemOff
 
+                                            \irregularStemOn
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 2
                                             fs'16
-                                            :32
                                             ^ [
+                                            \stemOff
 
                                             \times 2/3
                                             {
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 1
                                                 af'8
-                                                :32
                                                 ]
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 e'4
-                                                :32
+                                                \stemOff
 
                                             }
 
@@ -10082,67 +10127,76 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 3 voice measure 25]
+                                                    \irregularStemOn
                                                     \stop-follow
                                                     f'4
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     c'8
-                                                    :32
                                                     ^ [
+                                                    \stemOff
 
                                                 }
 
                                                 \times 2/3
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     cs'8
-                                                    :32
                                                     ]
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     a'4
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 2
                                                 bf'16
-                                                :32
                                                 ^ [
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 d'16
-                                                :32
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 1
                                                 cs'8
-                                                :32
                                                 ]
+                                                \stemOff
 
                                                 \times 2/3
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     fs'4
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     f'8
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
@@ -10169,14 +10223,16 @@
                                                     r8
                                                     ^ [
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     a'8
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \stop-follow
                                                     g'8
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
@@ -10184,18 +10240,21 @@
                                                 \times 8/7
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     af'8.
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     e'16
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     ef'8.
-                                                    :32
                                                     ]
                                                     \revert-noteheads
+                                                    \stemOff
 
                                                 }
 
@@ -10211,6 +10270,8 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r1
                                         \override Staff.BarLine.transparent = ##t
 
@@ -10241,11 +10302,13 @@
                                         % [alto flute 3 voice measure 32]
                                         r2
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         {
 
@@ -10264,50 +10327,58 @@
                                                     r8
                                                     ^ [
 
+                                                    \irregularStemOn
                                                     eqs''8
-                                                    :32
                                                     \pp
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     ef''8
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 ef'8
-                                                :32
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 2
                                                 eqs'16
-                                                :32
                                                 ]
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 bqf'4
-                                                :32
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 2
                                                 a'16
-                                                :32
                                                 ^ [
+                                                \stemOff
 
                                                 \times 2/3
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     c''8
-                                                    :32
                                                     ]
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     fs'4
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
@@ -10327,67 +10398,76 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 3 voice measure 34]
+                                                    \irregularStemOn
                                                     \stop-follow
                                                     gqs'4
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     c'8
-                                                    :32
                                                     ^ [
+                                                    \stemOff
 
                                                 }
 
                                                 \times 2/3
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     dqf'8
-                                                    :32
                                                     ]
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     dqf''4
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 2
                                                 ef''16
-                                                :32
                                                 ^ [
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 ef'16
-                                                :32
+                                                \stemOff
 
+                                                \irregularStemOn
                                                 \interrupt
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 1
                                                 dqf'8
-                                                :32
                                                 ]
+                                                \stemOff
 
                                                 \times 2/3
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     a'4
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     gqs'8
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
@@ -10411,14 +10491,16 @@
 
                                                     r4
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     dqf''4
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \stop-follow
                                                     bqf'4
-                                                    :32
+                                                    \stemOff
 
                                                 }
 
@@ -10426,20 +10508,23 @@
                                                 \times 8/7
                                                 {
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     \stop-follow
                                                     c''4.
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \set stemLeftBeamCount = 1
                                                     \set stemRightBeamCount = 1
                                                     fs'8
-                                                    :32
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \interrupt
                                                     eqs'4.
-                                                    :32
                                                     \revert-noteheads
+                                                    \stemOff
 
                                                 }
 
@@ -10455,14 +10540,18 @@
                                         \override Staff.Dots.transparent =  ##t
                                         \override Staff.Clef.transparent =  ##t
                                         \override Staff.TimeSignature.transparent =  ##t
+                                        \override Staff.TupletBracket.transparent =  ##t
+                                        \override Staff.TupletNumber.transparent =  ##t
                                         r4
                                         \override Staff.BarLine.transparent = ##t
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -10573,6 +10662,8 @@
                                 \override Staff.Dots.transparent =  ##t
                                 \override Staff.Clef.transparent =  ##t
                                 \override Staff.TimeSignature.transparent =  ##t
+                                \override Staff.TupletBracket.transparent =  ##t
+                                \override Staff.TupletNumber.transparent =  ##t
                                 r4.
                                 \override Staff.BarLine.transparent = ##t
 
@@ -10591,11 +10682,13 @@
                                 % [voice voice measure 4]
                                 r2
                                 \startStaff
-                                \override Staff.Rest.transparent =  ##f
-                                \override Staff.Dots.transparent =  ##f
-                                \override Staff.BarLine.transparent = ##f
-                                \override Staff.Clef.transparent =  ##f
-                                \override Staff.TimeSignature.transparent =  ##f
+                                \revert Staff.Rest.transparent
+                                \revert Staff.Dots.transparent
+                                \revert Staff.BarLine.transparent
+                                \revert Staff.Clef.transparent
+                                \revert Staff.TimeSignature.transparent
+                                \revert Staff.TupletBracket.transparent
+                                \revert Staff.TupletNumber.transparent
 
                                   %! COMMENT_MEASURE_NUMBERS
                                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -10609,7 +10702,7 @@
 
                                 \crossStaff {
                                 c'8 * 24/320
-                                - \tweak padding 5 \boxed-markup-down "unvoiced" 1
+                                - \tweak padding 5 \boxed-markup-down "sorda" 1
                                 _ \markup s
                                 }
 
@@ -10681,6 +10774,8 @@
                                 \override Staff.Dots.transparent =  ##t
                                 \override Staff.Clef.transparent =  ##t
                                 \override Staff.TimeSignature.transparent =  ##t
+                                \override Staff.TupletBracket.transparent =  ##t
+                                \override Staff.TupletNumber.transparent =  ##t
                                 r2.
                                 \override Staff.BarLine.transparent = ##t
 
@@ -10708,11 +10803,13 @@
 
                                 r8
                                 \startStaff
-                                \override Staff.Rest.transparent =  ##f
-                                \override Staff.Dots.transparent =  ##f
-                                \override Staff.BarLine.transparent = ##f
-                                \override Staff.Clef.transparent =  ##f
-                                \override Staff.TimeSignature.transparent =  ##f
+                                \revert Staff.Rest.transparent
+                                \revert Staff.Dots.transparent
+                                \revert Staff.BarLine.transparent
+                                \revert Staff.Clef.transparent
+                                \revert Staff.TimeSignature.transparent
+                                \revert Staff.TupletBracket.transparent
+                                \revert Staff.TupletNumber.transparent
 
                                   %! COMMENT_MEASURE_NUMBERS
                                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -10724,7 +10821,7 @@
                                 \crossStaff {
                                 c'8 * 24/320
                                 - \bendAfter #'1
-                                - \tweak padding 3.5 \boxed-markup-down "voiced" 1
+                                - \tweak padding 3.5 \boxed-markup-down "sonora" 1
                                 _ \markup "ʌ"
                                 }
 
@@ -11036,6 +11133,8 @@
                                 \override Staff.Dots.transparent =  ##t
                                 \override Staff.Clef.transparent =  ##t
                                 \override Staff.TimeSignature.transparent =  ##t
+                                \override Staff.TupletBracket.transparent =  ##t
+                                \override Staff.TupletNumber.transparent =  ##t
                                 r2.
                                 \override Staff.BarLine.transparent = ##t
 
@@ -11159,11 +11258,13 @@
                                 % [voice voice measure 41]
                                 r2.
                                 \startStaff
-                                \override Staff.Rest.transparent =  ##f
-                                \override Staff.Dots.transparent =  ##f
-                                \override Staff.BarLine.transparent = ##f
-                                \override Staff.Clef.transparent =  ##f
-                                \override Staff.TimeSignature.transparent =  ##f
+                                \revert Staff.Rest.transparent
+                                \revert Staff.Dots.transparent
+                                \revert Staff.BarLine.transparent
+                                \revert Staff.Clef.transparent
+                                \revert Staff.TimeSignature.transparent
+                                \revert Staff.TupletBracket.transparent
+                                \revert Staff.TupletNumber.transparent
 
                                   %! COMMENT_MEASURE_NUMBERS
                                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -11181,7 +11282,7 @@
                                 \crossStaff {
                                 c'8 * 40/24
                                 - \bendAfter #'2
-                                - \boxed-markup-down "voiced" 1
+                                - \boxed-markup-down "sonora" 1
                                 _ \markup "tsa"
                                 }
 
@@ -11351,14 +11452,8 @@
                                   %! evans.SegmentMaker.comment_measure_numbers()
                                 % [voice voice measure 51]
                                 \once \override MultiMeasureRest.transparent = ##t
-                                \stopStaff
-                                \override Staff.Rest.transparent =  ##t
-                                \override Staff.Dots.transparent =  ##t
-                                \override Staff.Clef.transparent =  ##t
-                                \override Staff.TimeSignature.transparent =  ##t
                                 \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                 R1 * 1/4
-                                \override Staff.BarLine.transparent = ##t
                                 \stopStaff \startStaff
 
                             }

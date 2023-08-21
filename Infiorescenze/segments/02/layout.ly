@@ -108,7 +108,7 @@
             \evans-new-spacing-section #7 #360
             s1 * 1/4
             \break
-            \evans-lbsd #8 #'(7)
+            \evans-lbsd #8 #'(14)
             \evans-system-X-offset #4
             \pageBreak
             \evans-new-spacing-section #1 #75
@@ -123,7 +123,7 @@
             \evans-new-spacing-section #7 #360
             s1 * 3/4
             \break
-            \evans-lbsd #43 #'(7)
+            \evans-lbsd #56 #'(1)
             \evans-system-X-offset #4
             \evans-new-spacing-section #1 #75
             s1 * 1/4
@@ -137,7 +137,7 @@
             \evans-new-spacing-section #7 #360
             s1 * 3/8
             \break
-            \evans-lbsd #78 #'(7)
+            \evans-lbsd #91 #'(14)
             \evans-system-X-offset #4
             \evans-new-spacing-section #1 #75
             s1 * 1/4
@@ -151,7 +151,7 @@
             \evans-new-spacing-section #7 #360
             s1 * 1/4
             \break
-            \evans-lbsd #113 #'(7)
+            \evans-lbsd #132 #'(14)
             \evans-system-X-offset #4
             \evans-new-spacing-section #1 #75
             s1 * 5/12

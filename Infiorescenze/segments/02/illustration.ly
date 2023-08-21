@@ -19,7 +19,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"55"
+                \tempo 8=55
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 3/8
@@ -50,18 +50,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 4]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"44"
                   %! scaling time signatures
                 \time 1/4
                 s1 * 1/4
-                - \material-label-markup "II" "ᛚ" "4" "इ" "{εγ}" "`N" "२" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"44"
-                  }
-                }
+                - \material-label-markup "II" "ᛚ" "4" "इ" "{εγ}" "`N" "१" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -94,18 +86,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 9]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"36" #"2" #"3"
                   %! scaling time signatures
                 \time 3/4
                 s1 * 3/4
-                - \material-label-markup "II" "ᛚ" "4" "उ" "{ηγ}" "`J" "३" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"36" #"2" #"3"
-                  }
-                }
+                - \material-label-markup "II" "ᛚ" "4" "उ" "{ηγ}" "`J" "१" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -149,18 +133,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 15]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"31" #"3" #"7"
                   %! scaling time signatures
                 \time 1/4
                 s1 * 1/4
-                - \material-label-markup "II" "ᛚ" "4" "ऋ" "γ" "`J" "४" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"31" #"3" #"7"
-                  }
-                }
+                - \material-label-markup "II" "ᛚ" "4" "ऋ" "γ" "`J" "१" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -172,18 +148,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 17]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"27" #"1" #"2"
                   %! scaling time signatures
                 \time 4/8
                 s1 * 1/2
-                - \material-label-markup "II" "ᛚ" "4" "ऌ" "{εη}" "`J" "५" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"27" #"1" #"2"
-                  }
-                }
+                - \material-label-markup "II" "ᛚ" "4" "ऌ" "{εη}" "`J" "१" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -232,23 +200,15 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 24]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"24" #"4" #"9"
                   %! scaling time signatures
                 \time 5/8
                 s1 * 5/8
-                - \material-label-markup "II" "ᛚ" "4" "ए" "η" "`J" "६" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"24" #"4" #"9"
-                  }
-                }
+                - \material-label-markup "II" "ᛚ" "4" "ए" "η" "`J" "१" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 25]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"82" #"1" #"2"
+                \tempo 8=82
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
@@ -285,18 +245,18 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 29]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"55"
+                \tempo 8=68
                   %! scaling time signatures
                 #(ly:expect-warning "strange time signature found")
                   %! scaling time signatures
                 \time 4/6
                 s1 * 2/3
-                - \material-label-markup "II" "ᚠ" "5" "अb" "{ζα}" "`J" "१" 2
+                - \material-label-markup "II" "ᚠ" "5" "अb" "{ζα}" "`J" "२" 2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-markup #3 #0 #1 #"55"
+                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"68" #"3" #"4"
                   }
                 }
 
@@ -317,7 +277,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 32]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"96" #"1" #"4"
+                \tempo 8=96
                   %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
@@ -361,18 +321,10 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 37]
-                \tempo \markup \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
                   %! scaling time signatures
                 \time 1/4
                 s1 * 1/4
-                - \material-label-markup "II" "ᚠ" "5" "इa" "α" "`J" "६" 2
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 3)
-                  \concat {
-                      \abjad-metronome-mark-mixed-number-markup #3 #0 #1 #"123" #"3" #"4"
-                  }
-                }
+                - \material-label-markup "II" "ᚠ" "5" "इa" "α" "`J" "४" 2
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -414,7 +366,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 43]
-                \tempo \markup \abjad-metronome-mark-markup #3 #0 #1 #"110"
+                \tempo 8=110
                   %! scaling time signatures
                 \time 3/8
                 s1 * 3/8
@@ -460,15 +412,7 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 1 voice measure 1]
-                                        \stopStaff
-                                        \override Staff.Rest.transparent =  ##t
-                                        \override Staff.Dots.transparent =  ##t
-                                        \override Staff.Clef.transparent =  ##t
-                                        \override Staff.TimeSignature.transparent =  ##t
-                                        \override Staff.TupletBracket.transparent =  ##t
-                                        \override Staff.TupletNumber.transparent =  ##t
                                         r4.
-                                        \override Staff.BarLine.transparent = ##t
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -479,14 +423,6 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 1 voice measure 3]
                                         r2
-                                        \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
-                                        \override Staff.TupletBracket.transparent =  ##f
-                                        \override Staff.TupletNumber.transparent =  ##f
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -535,12 +471,12 @@
                                             \tongue #3
                                             fs'64
                                             - \bendAfter #'-2
-                                            - \stopped
+                                            - \key-click-plus
                                             \mp
 
                                             \start-switch 0.125
                                             d'64
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tenuto
                                             \mf
                                             \revert-noteheads
@@ -571,12 +507,12 @@
                                             \tongue #3
                                             af'64
                                             - \bendAfter #'-2
-                                            - \stopped
+                                            - \key-click-plus
                                             \ff
 
                                             \start-switch 0.125
                                             c''32
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tenuto
                                             \mp
                                             \revert-noteheads
@@ -637,23 +573,23 @@
                                             \tongue #3
                                             ef''32
                                             - \bendAfter #'-2
-                                            - \stopped
+                                            - \key-click-plus
                                             \mf
 
                                             cs''32
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tenuto
                                             \ff
 
                                             f'32
-                                            - \stopped
+                                            - \key-click-plus
                                             - \tenuto
                                             \mf
 
                                             \start-switch 0.125
                                             e''16
+                                            - \key-click-plus
                                             - \marcato
-                                            - \stopped
                                             \mp
                                             \revert-noteheads
 
@@ -703,7 +639,7 @@
                                             a'''32
                                             \f
                                             ]
-                                            \all-color-music \safe-black
+                                            \all-color-music black
                                             \revert-noteheads
 
                                         }
@@ -947,6 +883,7 @@
                                         \pitchedTrill
                                         fs'4.
                                         \pp
+                                        - \boxed-markup-down "affettuoso" 1
                                         ^ \markup (bisbigliando)
                                         \<
                                         ~
@@ -1031,11 +968,12 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \irregularStemOn
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'2
-                                                :32
                                                 ~
+                                                \stemOff
 
                                             }
 
@@ -1052,7 +990,7 @@
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 4]
                                                 \override Beam.beam-thickness = 0.5
-                                                \once \override Beam.positions = #'(34 . 34)
+                                                \once \override Beam.positions = #'(36 . 36)
                                                 \start-ob-multi-grace
                                                 _(
                                                   %! abjad.on_beat_grace_container(3)
@@ -1075,7 +1013,22 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \all-color-music #safe-green
+                                                \override Accidental.color = black
+                                                \override Beam.color = black
+                                                \override Dots.color = black
+                                                \override Flag.color = black
+                                                \override Glissando.color = black
+                                                \override MultiMeasureRest.color = black
+                                                \override NoteHead.color = black
+                                                \override RepeatTie.color = black
+                                                \override Rest.color = black
+                                                \override Slur.color = black
+                                                \override Stem.color = black
+                                                \override StemTremolo.color = black
+                                                \override Tie.color = black
                                                 \override Staff.NoteHead.details.interrupt-color = #safe-green
+                                                \override Staff.NoteHead.details.switch-color = #safe-green
                                                 \start-explicit-interrupt
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
@@ -1112,7 +1065,7 @@
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 6]
                                                 \override Beam.beam-thickness = 0.5
-                                                \once \override Beam.positions = #'(34 . 34)
+                                                \once \override Beam.positions = #'(36 . 36)
                                                 \start-ob-multi-grace
                                                 _(
                                                   %! abjad.on_beat_grace_container(3)
@@ -1153,16 +1106,17 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 7]
+                                        \irregularStemOn
                                           %! abjad.on_beat_grace_container(5)
                                         \oneVoice
                                         \start-explicit-interrupt
                                         \stop-switch
                                         \afterGrace 1/16
                                         fs'4
-                                        :32
                                         ~
                                         {
                                              \suggest-pitch-open  g'32 \startTripleTrill #6 #5 #4      \suggest-pitch-middle  gqs'32     \suggest-pitch-close  gs'32}
+                                        \stemOff
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1265,12 +1219,14 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \irregularStemOn
                                                 \stop-switch
+                                                \all-color-music black
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4.
-                                                :32
                                                 ~
+                                                \stemOff
 
                                             }
 
@@ -1431,16 +1387,17 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 14]
+                                        \irregularStemOn
                                           %! abjad.on_beat_grace_container(5)
                                         \oneVoice
                                         \afterGrace 1/16
                                         fs'4.
-                                        :32
                                         ~
                                         {
                                              \suggest-pitch-open  g'32 \startDoubleTrill #5 #4 
                                              \suggest-pitch-close  gs'32
                                         }
+                                        \stemOff
 
                                         <<
 
@@ -1540,15 +1497,16 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 17]
+                                        \irregularStemOn
                                         \afterGrace 1/16
                                         fs'2
-                                        :32
                                         ~
                                         \stopTripleTrill
                                         {
                                              \suggest-pitch-open  es'32 \startDoubleTrill #6.5 #5.5 
                                              \suggest-pitch-close  g'32
                                         }
+                                        \stemOff
 
                                         <<
 
@@ -1575,11 +1533,11 @@
 
                                                 eqs'8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 ef''8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1591,6 +1549,20 @@
                                             {
 
                                                 \start-explicit-interrupt
+                                                \all-color-music #safe-green
+                                                \override Accidental.color = black
+                                                \override Beam.color = black
+                                                \override Dots.color = black
+                                                \override Flag.color = black
+                                                \override Glissando.color = black
+                                                \override MultiMeasureRest.color = black
+                                                \override NoteHead.color = black
+                                                \override RepeatTie.color = black
+                                                \override Rest.color = black
+                                                \override Slur.color = black
+                                                \override Stem.color = black
+                                                \override StemTremolo.color = black
+                                                \override Tie.color = black
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4.
@@ -1625,19 +1597,19 @@
                                                 [
 
                                                 a'8 * 4/15
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 bqf''8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 gqs'8 * 4/15
+                                                _ \key-click-plus
                                                 _ \staccatissimo
-                                                _ \stopped
 
                                                 dqf'8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1649,6 +1621,7 @@
                                             {
 
                                                 \stop-switch
+                                                \all-color-music black
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'4
@@ -1771,7 +1744,7 @@
                                                 [
 
                                                 c''8 * 4/15
-                                                _ \stopped
+                                                _ \key-click-plus
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1782,10 +1755,10 @@
                                             \context Voice = "alto flute 2 voice"
                                             {
 
+                                                \irregularStemOn
                                                   %! abjad.on_beat_grace_container(4)
                                                 \voiceTwo
                                                 fs'2
-                                                :32
                                                   %! SPANNER_START
                                                   %! baca.PiecewiseCommand._call(2)
                                                   %! baca.text_spanner()
@@ -1820,6 +1793,7 @@
                                                 \startTextSpanTwo
                                                 ~
                                                 \stopTripleTrill
+                                                \stemOff
 
                                             }
 
@@ -1849,11 +1823,11 @@
                                                 [
 
                                                 gqs'8 * 4/15
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 fs''8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1901,8 +1875,8 @@
                                                 [
 
                                                 gqs'8 * 4/15
+                                                _ \key-click-plus
                                                 _ \staccatissimo
-                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -1989,11 +1963,11 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [alto flute 2 voice measure 24]
+                                        \irregularStemOn
                                           %! abjad.on_beat_grace_container(5)
                                         \oneVoice
                                         \afterGrace 1/16
                                         fs'4.
-                                        :32
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(3)
                                           %! baca.text_spanner()
@@ -2007,6 +1981,7 @@
                                              \suggest-pitch-open  g'32 \startDoubleTrill #5 #4 
                                              \suggest-pitch-close  gs'32
                                         }
+                                        \stemOff
 
                                         <<
 
@@ -2029,15 +2004,15 @@
                                                 [
 
                                                 a'8 * 4/15
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 dqf'8 * 4/15
                                                 _ \accent
-                                                _ \stopped
+                                                _ \key-click-plus
 
                                                 ef''8 * 4/15
+                                                _ \key-click-plus
                                                 _ \staccato
-                                                _ \stopped
                                                 ]
                                                 )
                                                 \revert Beam.beam-thickness
@@ -2071,6 +2046,7 @@
                                                 \pitchedTrill
                                                 cs''16.
                                                 \ppp
+                                                - \boxed-markup-down "feroce, giocoso" 1
                                                 \stopTrillSpan
                                                 ^ [
                                                 \startTrillSpan d''
@@ -2117,13 +2093,13 @@
                                                 \tongue #3
                                                 g''16
                                                 - \bendAfter #'-2
-                                                - \stopped
+                                                - \key-click-plus
                                                 \mp
 
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 1
                                                 af'8
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tenuto
                                                 \ff
                                                 ]
@@ -2134,7 +2110,7 @@
                                             {
 
                                                 c''4
-                                                - \stopped
+                                                - \key-click-plus
                                                 - \tenuto
                                                 \mp
                                                 \revert-noteheads
@@ -2200,26 +2176,26 @@
                                                     \tongue #3
                                                     b'''16
                                                     - \bendAfter #'-2
-                                                    - \stopped
+                                                    - \key-click-plus
                                                     \mf
 
                                                     g''64
-                                                    - \stopped
+                                                    - \key-click-plus
                                                     - \tenuto
                                                     \f
 
                                                     fs'64
-                                                    - \stopped
+                                                    - \key-click-plus
                                                     - \tenuto
                                                     \ff
 
                                                     d''64
+                                                    - \key-click-plus
                                                     - \marcato
-                                                    - \stopped
                                                     \mp
 
                                                     ef''64
-                                                    - \stopped
+                                                    - \key-click-plus
                                                     - \tenuto
                                                     \mf
                                                     ~
@@ -2242,15 +2218,73 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 29]
+                                                    \irregularStemOn
                                                     ef''16
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \sf
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.padding 0.5
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.stencil-align-dir-y #center
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak color #safe-green
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak staff-padding 15
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \abjad-solid-line-with-arrow
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \startTextSpanOne
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \>
                                                     \revert-noteheads
+                                                    \stemOff
 
-                                                    cs'8
+                                                    \irregularStemOn
+                                                    \half-air-tone
+                                                    cs''8
+                                                    \revert-noteheads
+                                                    \stemOff
 
+                                                    \irregularStemOn
+                                                    \air-tone
                                                     \set stemLeftBeamCount = 3
                                                     \set stemRightBeamCount = 3
-                                                    f'32
+                                                    f'''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \p
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.text_spanner()
+                                                    \stopTextSpanOne
                                                     ]
+                                                    \revert-noteheads
+                                                    \stemOff
 
                                                     r4.
 
@@ -2266,26 +2300,151 @@
 
                                                     r16
 
-                                                    e'32
+                                                    \irregularStemOn
+                                                    \half-air-tone
+                                                    e''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \sf
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.padding 0.5
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.stencil-align-dir-y #center
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak color #safe-green
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak staff-padding 15
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \abjad-solid-line-with-arrow
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \startTextSpanOne
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \>
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    a'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    a''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    af'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    af''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    c'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    c'''32
+                                                    - \accent
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \p
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.text_spanner()
+                                                    \stopTextSpanOne
+                                                    \revert-noteheads
+                                                    \stemOff
 
                                                     r32
 
-                                                    e'32
+                                                    \irregularStemOn
+                                                    \half-air-tone
+                                                    e''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \sf
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.padding 0.5
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.stencil-align-dir-y #center
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak color #safe-green
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak staff-padding 15
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \abjad-solid-line-with-arrow
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \startTextSpanOne
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \>
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    c'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    c'''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    cs'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    cs'''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    af'8..
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    af''8..
+                                                    - \accent
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    a'16.
+                                                    \irregularStemOn
+                                                    \slapped
+                                                    a''16.
                                                     ~
+                                                    \stemOff
 
                                                 }
 
@@ -2301,13 +2460,80 @@
                                                   %! COMMENT_MEASURE_NUMBERS
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 30]
-                                                a'16..
+                                                \irregularStemOn
+                                                a''16..
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.hairpin()
+                                                \p
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.text_spanner()
+                                                \stopTextSpanOne
+                                                \revert-noteheads
+                                                \stemOff
 
                                                 r64
 
-                                                f'64
+                                                \irregularStemOn
+                                                \half-air-tone
+                                                f''64
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \sf
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-green
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 15
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \>
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                g'16
+                                                \irregularStemOn
+                                                \air-tone
+                                                g''16
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.hairpin()
+                                                \p
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.text_spanner()
+                                                \stopTextSpanOne
+                                                \revert-noteheads
+                                                \stemOff
 
                                                 r16..
 
@@ -2320,16 +2546,76 @@
 
                                                 r64
 
-                                                fs'64
+                                                \irregularStemOn
+                                                \half-air-tone
+                                                fs''64
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \sf
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-green
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 15
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \>
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                bf'64
+                                                \irregularStemOn
+                                                \air-tone
+                                                bf''64
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                b'32
+                                                \irregularStemOn
+                                                \air-tone
+                                                b''32
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                ef'64
+                                                \irregularStemOn
+                                                \air-tone
+                                                ef'''64
+                                                - \accent
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                d'32
+                                                \irregularStemOn
+                                                \slapped
+                                                d'''32
                                                 ~
+                                                \stemOff
 
                                             }
 
@@ -2343,9 +2629,25 @@
                                                   %! COMMENT_MEASURE_NUMBERS
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 31]
-                                                d'16
+                                                \irregularStemOn
+                                                d'''16
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                ef'32
+                                                \irregularStemOn
+                                                \air-tone
+                                                ef'''32
+                                                - \key-click-plus
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.hairpin()
+                                                \p
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.text_spanner()
+                                                \stopTextSpanOne
+                                                \revert-noteheads
+                                                \stemOff
 
                                                 r8..
 
@@ -2356,33 +2658,192 @@
 
                                                 r8
 
-                                                e'16
+                                                \irregularStemOn
+                                                \half-air-tone
+                                                e''16
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \sf
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.padding 0.5
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \tweak bound-details.right.stencil-align-dir-y #center
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak color #safe-green
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \tweak staff-padding 15
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \abjad-solid-line-with-arrow
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.text_spanner()
+                                                \startTextSpanOne
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \>
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                c'32
+                                                \irregularStemOn
+                                                \air-tone
+                                                c'''32
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                b'16
+                                                \irregularStemOn
+                                                \air-tone
+                                                b''16
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                g'32
+                                                \irregularStemOn
+                                                \air-tone
+                                                g''32
+                                                - \accent
+                                                \revert-noteheads
+                                                \stemOff
 
-                                                af'16
+                                                \irregularStemOn
+                                                \slapped
+                                                af'''16
                                                 ~
+                                                \stemOff
 
                                             }
 
                                             \times 2/3
                                             {
 
-                                                af'16
+                                                \irregularStemOn
+                                                af'''16
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.hairpin()
+                                                \p
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.text_spanner()
+                                                \stopTextSpanOne
+                                                \revert-noteheads
+                                                \stemOff
 
                                                 r8
 
-                                                fs'16
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                fs''16
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \mp
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                - \tweak stencil #constante-hairpin
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \<
+                                                _ (
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
 
-                                                bf'16
+                                                fs''16
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                a'32
+                                                fs''32
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
 
-                                                d'32
+                                                fs''32
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
                                             }
 
@@ -2400,49 +2861,172 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 32]
-                                                    cs'32
+                                                    fs''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
 
-                                                    f'32
+                                                    fs''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
 
-                                                    a'32
+                                                    fs''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \!
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
+                                                    )
 
                                                     r32
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
 
-                                                    f'32
+                                                    \irregularStemOn
+                                                    \half-air-tone
+                                                    f''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \sf
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.padding 0.5
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \tweak bound-details.right.stencil-align-dir-y #center
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak color #safe-green
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \tweak staff-padding 15
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \abjad-solid-line-with-arrow
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-left-markup \markup \flute-heel-rotation-markup #0
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    - \baca-text-spanner-right-markup \markup \flute-heel-rotation-markup #-65
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.text_spanner()
+                                                    \startTextSpanOne
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \>
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    fs'32
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    fs''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    cs'8..
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    cs'''8..
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    d'8
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    d'''8
+                                                    - \accent
                                                     ~
+                                                    \stemOff
 
-                                                    d'32
+                                                    \irregularStemOn
+                                                    d'''32
+                                                    \revert-noteheads
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \set stemLeftBeamCount = 2
                                                     \set stemRightBeamCount = 2
-                                                    bf'16
+                                                    \slapped
+                                                    bf''16
                                                     ]
                                                     ~
+                                                    \stemOff
 
                                                 }
 
                                                 \times 2/3
                                                 {
 
-                                                    bf'4
+                                                    \irregularStemOn
+                                                    bf''4
                                                     ~
+                                                    \stemOff
 
+                                                    \irregularStemOn
                                                     \set stemLeftBeamCount = 2
                                                     \set stemRightBeamCount = 2
-                                                    bf'16
+                                                    bf''16
                                                     ^ [
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    c'8.
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    c'''8.
+                                                    - \key-click-plus
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    b'8
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    b''8
+                                                    - \accent
+                                                    \revert-noteheads
+                                                    \stemOff
 
-                                                    ef'8
+                                                    \irregularStemOn
+                                                    \air-tone
+                                                    ef'''8
+                                                    \revert-noteheads
+                                                    \stemOff
 
                                                 }
 
@@ -2461,13 +3045,71 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 33]
-                                                    e'64
+                                                    \irregularStemOn
+                                                    \slapped
+                                                    e'''64
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \p
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.text_spanner()
+                                                    \stopTextSpanOne
+                                                    \revert-noteheads
+                                                    \stemOff
 
                                                     r32
 
-                                                    af'64
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    af''64
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \mp
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    - \tweak stencil #constante-hairpin
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \<
+                                                    _ (
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
 
-                                                    g'64
+                                                    af''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
                                                     ~
 
                                                 }
@@ -2475,9 +3117,12 @@
                                                 \times 4/5
                                                 {
 
-                                                    g'32.
+                                                    af''32.
 
-                                                    fs'32
+                                                    af''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
                                                 }
@@ -2485,15 +3130,129 @@
                                                 \times 4/5
                                                 {
 
-                                                    fs'32
+                                                    af''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \!
+                                                    )
 
                                                     r32.
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
 
                                                 }
 
                                                 r64
 
-                                                g'16..
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                g''16..
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \mp
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                - \tweak stencil #constante-hairpin
+                                                  %! SPANNER_START
+                                                  %! baca.PiecewiseCommand._call(2)
+                                                  %! baca.hairpin()
+                                                \<
+                                                _ (
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                - \tweak staff-padding 10
+                                                  %! SPANNER_START
+                                                  %! baca._do_spanner_indicator_command(1)
+                                                  %! baca.trill_spanner()
+                                                \startTrillSpan
 
                                             }
 
@@ -2512,18 +3271,27 @@
                                                     % [alto flute 2 voice measure 34]
                                                     \set stemLeftBeamCount = 3
                                                     \set stemRightBeamCount = 3
-                                                    ef'32
+                                                    g''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
                                                     ]
 
-                                                    d'4
+                                                    g''4
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
                                                     \set stemLeftBeamCount = 3
                                                     \set stemRightBeamCount = 3
-                                                    d'32
+                                                    g''32
                                                     ^ [
 
-                                                    bf'16
+                                                    g''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
                                                     ~
 
                                                 }
@@ -2531,23 +3299,79 @@
                                                 \times 2/3
                                                 {
 
-                                                    bf'16.
+                                                    g''16.
 
-                                                    b'32
+                                                    g''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
 
-                                                    a'32
+                                                    g''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                    cs'32
+                                                    g''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
 
                                                 }
 
-                                                c'16.
+                                                g''16.
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                f'16.
+                                                g''16.
+                                                  %! SPANNER_STOP
+                                                  %! baca.PiecewiseCommand._call(3)
+                                                  %! baca.hairpin()
+                                                \!
+                                                - \tweak color #safe-blue
+                                                - \tweak font-size #-5.5
+                                                _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
+                                                )
 
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 2
                                                 r8.
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
+                                                  %! SPANNER_STOP
+                                                  %! baca._do_spanner_indicator_command(2)
+                                                  %! baca.trill_spanner()
+                                                \stopTrillSpan
                                                 ]
 
                                             }
@@ -2584,9 +3408,16 @@
 
                                                     r64
 
+                                                    \slapped
                                                     e'64
+                                                    - \key-click-plus
+                                                    \mf
+                                                    - \tweak stencil #abjad-flared-hairpin
+                                                    \<
+                                                    \revert-noteheads
 
                                                     af'64
+                                                    - \key-click-plus
 
                                                 }
 
@@ -2594,31 +3425,176 @@
                                                 {
 
                                                     bf'64
+                                                    - \key-click-plus
+                                                    \ff
+                                                    - \tweak circled-tip ##t
+                                                    \>
 
+                                                    \slapped
                                                     fs'64
+                                                    - \key-click-plus
+                                                    \revert-noteheads
 
                                                     g'64
+                                                    - \key-click-plus
+                                                    \!
 
                                                     r64
 
-                                                    d'32
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    d''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \mp
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    - \tweak stencil #constante-hairpin
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \<
+                                                    _ (
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
 
-                                                    ef'64
+                                                    d''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
 
-                                                    b'64
+                                                    d''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                    cs'64
+                                                    d''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
 
-                                                    c'64
+                                                    d''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
 
-                                                    e'32.
+                                                    d''32.
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
 
-                                                    f'32
+                                                    d''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
 
-                                                    a'16
+                                                    d''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
                                                     ~
 
-                                                    a'64
+                                                    d''64
 
                                                 }
 
@@ -2637,17 +3613,26 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 37]
-                                                    af'16
+                                                    d''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
-                                                    af'64
+                                                    d''64
 
-                                                    e'16
+                                                    d''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
                                                     ~
 
-                                                    e'64
+                                                    d''64
 
-                                                    f'32
+                                                    d''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
                                                     ~
 
                                                 }
@@ -2655,31 +3640,184 @@
                                                 \times 4/5
                                                 {
 
-                                                    f'32
+                                                    d''32
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \!
+                                                    )
 
                                                     r64
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
 
-                                                    cs'64
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    cs''64
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \mp
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    - \tweak stencil #constante-hairpin
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \<
+                                                    _ (
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
 
-                                                    c'32
+                                                    cs''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                    af'16
+                                                    cs''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
                                                     ~
 
                                                 }
 
-                                                af'16
+                                                cs''16
 
                                                 \times 2/3
                                                 {
 
-                                                    a'32.
+                                                    cs''32.
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
 
-                                                    g'64
+                                                    cs''64
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \!
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
+                                                    )
 
                                                     r64
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
 
+                                                    \slapped
                                                     b'64
+                                                    - \key-click-plus
+                                                    \mf
+                                                    - \tweak stencil #abjad-flared-hairpin
+                                                    \<
+                                                    \revert-noteheads
 
                                                 }
 
@@ -2696,16 +3834,25 @@
                                                   %! evans.SegmentMaker.comment_measure_numbers()
                                                 % [alto flute 2 voice measure 38]
                                                 bf'32
+                                                - \key-click-plus
 
                                                 ef'32
+                                                - \key-click-plus
 
+                                                \slapped
                                                 d'16.
+                                                - \key-click-plus
+                                                \revert-noteheads
 
                                                 fs'8
+                                                - \key-click-plus
 
                                                 g'16
+                                                - \key-click-plus
 
+                                                \slapped
                                                 ef'32
+                                                - \key-click-plus
                                                 ~
 
                                             }
@@ -2714,17 +3861,27 @@
                                             {
 
                                                 ef'32
+                                                \ff
+                                                - \tweak circled-tip ##t
+                                                \>
+                                                \revert-noteheads
 
                                                 e'32
+                                                - \key-click-plus
 
                                                 b'16
+                                                - \key-click-plus
 
+                                                \slapped
                                                 c'8
+                                                - \key-click-plus
                                                 ~
 
                                                 c'32
+                                                \revert-noteheads
 
                                                 af'32
+                                                - \key-click-plus
 
                                             }
 
@@ -2732,11 +3889,16 @@
                                             {
 
                                                 bf'32
+                                                - \key-click-plus
 
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 3
+                                                \slapped
                                                 a'32
+                                                - \key-click-plus
+                                                \!
                                                 ]
+                                                \revert-noteheads
 
                                                 r4
 
@@ -2769,9 +3931,16 @@
                                                     r32
                                                     ^ [
 
+                                                    \slapped
                                                     cs'32
+                                                    - \key-click-plus
+                                                    \mf
+                                                    - \tweak stencil #abjad-flared-hairpin
+                                                    \<
+                                                    \revert-noteheads
 
                                                     d'16
+                                                    - \key-click-plus
                                                     ~
 
                                                 }
@@ -2785,17 +3954,30 @@
                                                     ]
 
                                                     fs'4
+                                                    - \key-click-plus
 
                                                     \set stemLeftBeamCount = 2
                                                     \set stemRightBeamCount = 2
+                                                    \slapped
                                                     f'16
+                                                    - \key-click-plus
+                                                    \ff
                                                     ^ [
+                                                    - \tweak circled-tip ##t
+                                                    \>
+                                                    \revert-noteheads
 
                                                     c'16
+                                                    - \key-click-plus
 
                                                     cs'8
+                                                    - \key-click-plus
 
+                                                    \slapped
                                                     a'16
+                                                    - \key-click-plus
+                                                    \!
+                                                    \revert-noteheads
 
                                                     r32
 
@@ -2816,14 +3998,117 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 40]
-                                                    af'16
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    \vibrato #'(0 2 5 3 1 0) #2 #0.2
+                                                    af''16
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \mp
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    - \tweak stencil #constante-hairpin
+                                                      %! SPANNER_START
+                                                      %! baca.PiecewiseCommand._call(2)
+                                                      %! baca.hairpin()
+                                                    \<
+                                                    _ (
                                                     ~
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    - \tweak staff-padding 10
+                                                      %! SPANNER_START
+                                                      %! baca._do_spanner_indicator_command(1)
+                                                      %! baca.trill_spanner()
+                                                    \startTrillSpan
 
-                                                    af'64
+                                                    af''64
 
-                                                    e'16.
+                                                    af''16.
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
 
-                                                    f'64
+                                                    af''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
                                                     ~
 
                                                 }
@@ -2831,14 +4116,20 @@
                                                 \times 2/3
                                                 {
 
-                                                    f'32
+                                                    af''32
 
-                                                    ef'8
+                                                    af''8
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 3 }
                                                     ~
 
-                                                    ef'64
+                                                    af''64
 
-                                                    g'64
+                                                    af''64
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
                                                 }
@@ -2846,11 +4137,17 @@
                                                 \times 4/5
                                                 {
 
-                                                    g'32.
+                                                    af''32.
 
-                                                    fs'16
+                                                    af''16
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 1 }
 
-                                                    b'32.
+                                                    af''32.
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
                                                 }
@@ -2872,9 +4169,12 @@
                                                       %! COMMENT_MEASURE_NUMBERS
                                                       %! evans.SegmentMaker.comment_measure_numbers()
                                                     % [alto flute 2 voice measure 41]
-                                                    b'16
+                                                    af''16
 
-                                                    bf'32
+                                                    af''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 2 }
                                                     ~
 
                                                 }
@@ -2882,9 +4182,12 @@
                                                 \times 2/3
                                                 {
 
-                                                    bf'16
+                                                    af''16
 
-                                                    d'32
+                                                    af''32
+                                                    - \tweak color #safe-blue
+                                                    - \tweak font-size #-5.5
+                                                    _ \markup { \override #'(circle-padding . 0.3) \circle \number 4 }
                                                     ~
 
                                                 }
@@ -2892,11 +4195,52 @@
                                                 \times 2/3
                                                 {
 
-                                                    d'16
+                                                    af''16
+                                                      %! SPANNER_STOP
+                                                      %! baca.PiecewiseCommand._call(3)
+                                                      %! baca.hairpin()
+                                                    \!
+                                                    )
 
                                                     \set stemLeftBeamCount = 3
                                                     \set stemRightBeamCount = 3
                                                     r32
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
+                                                      %! SPANNER_STOP
+                                                      %! baca._do_spanner_indicator_command(2)
+                                                      %! baca.trill_spanner()
+                                                    \stopTrillSpan
                                                     ]
 
                                                 }
@@ -2930,11 +4274,19 @@
 
                                                     r32
 
-                                                    ef'32
+                                                    \pitchedTrill
+                                                    ef''32
+                                                    \ppp
+                                                    \startTrillSpan ff''
 
-                                                    b'16.
+                                                    \slapped
+                                                    b''16.
+                                                    \mf
+                                                    \stopTrillSpan
 
                                                     c'32
+                                                    \mp
+                                                    \revert-noteheads
 
                                                 }
 
@@ -2952,21 +4304,47 @@
                                                 % [alto flute 2 voice measure 43]
                                                 r64
 
-                                                g'64
+                                                \half-air-tone
+                                                \tongue #3
+                                                g'''64
+                                                - \bendAfter #'-2
+                                                - \key-click-plus
+                                                \ff
 
                                                 af'64
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \mp
 
                                                 e'64
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \mf
 
-                                                fs'64
+                                                fs'''64
+                                                - \key-click-plus
+                                                - \marcato
+                                                \ff
 
-                                                f'32
+                                                f''32
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \f
 
-                                                a'32.
+                                                a''32.
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \mp
 
                                                 bf'64
+                                                - \key-click-plus
+                                                - \marcato
+                                                \ff
 
-                                                d'64
+                                                d''64
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \mp
                                                 ~
 
                                             }
@@ -2974,12 +4352,16 @@
                                             \times 2/3
                                             {
 
-                                                d'16
+                                                d''16
                                                 ~
 
-                                                d'64
+                                                d''64
 
-                                                cs'16.
+                                                cs''16.
+                                                - \key-click-plus
+                                                - \tenuto
+                                                \pp
+                                                \revert-noteheads
 
                                                 r64
 
@@ -2990,11 +4372,19 @@
 
                                                 r32
 
+                                                \pitchedTrill
                                                 a'64
+                                                \ff
+                                                \startTrillSpan bf'
 
-                                                bf'32
+                                                \slapped
+                                                bf'''32
+                                                \mf
+                                                \stopTrillSpan
 
-                                                fs'16.
+                                                fs''16.
+                                                \f
+                                                \revert-noteheads
 
                                                 \set stemLeftBeamCount = 4
                                                 \set stemRightBeamCount = 4
@@ -3005,30 +4395,10 @@
 
                                         }
 
-                                        {
-
-                                            \times 2/3
-                                            {
-
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [alto flute 2 voice measure 44]
-                                                r4
-
-                                                \times 4/5
-                                                {
-
-                                                    \set stemLeftBeamCount = 1
-                                                    \set stemRightBeamCount = 1
-                                                    r8
-
-                                                    r32
-
-                                                }
-
-                                            }
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [alto flute 2 voice measure 44]
+                                        r4
 
                                     }
 
@@ -3141,7 +4511,7 @@
                                             \once \override Staff.Beam.beam-thickness = 1
                                             \tweak Accidental.stencil #ly:text-interface::print
                                             \tweak Accidental.text \abjad-natural-markup
-                                            d''!16 * 37/32
+                                            f''!16 * 37/32
                                             \ppp
                                             [
                                               %! SPANNER_START
@@ -3178,25 +4548,25 @@
                                             \startTextSpanOne
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \four-fifths-sharp-markup
-                                            ds''!16 * 1
+                                            \tweak Accidental.text \one-quarter-sharp-markup
+                                            e''!16 * 1
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \one-fifth-sharp-markup
-                                            d''!16 * 7/8
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            e''!16 * 7/8
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \three-fifths-sharp-markup
+                                            \tweak Accidental.text \abjad-sharp-markup
                                             ds''!16 * 13/16
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \two-fifths-sharp-markup
-                                            d''!16 * 49/64
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            e''!16 * 49/64
 
                                             \start-switch 0.125
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \abjad-natural-markup
-                                            e''!16 * 47/64
+                                            \tweak Accidental.text \abjad-sharp-markup
+                                            ds''!16 * 47/64
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -3237,13 +4607,13 @@
                                         % [alto flute 3 voice measure 12]
                                         r2.
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
-                                        \override Staff.TupletBracket.transparent =  ##f
-                                        \override Staff.TupletNumber.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         \tweak edge-height #'(0.7 . 0)
                                         \times 2/3
@@ -3284,13 +4654,13 @@
                                         r2
                                         \override Staff.BarLine.transparent = ##t
                                         \startStaff
-                                        \override Staff.Rest.transparent =  ##f
-                                        \override Staff.Dots.transparent =  ##f
-                                        \override Staff.BarLine.transparent = ##f
-                                        \override Staff.Clef.transparent =  ##f
-                                        \override Staff.TimeSignature.transparent =  ##f
-                                        \override Staff.TupletBracket.transparent =  ##f
-                                        \override Staff.TupletNumber.transparent =  ##f
+                                        \revert Staff.Rest.transparent
+                                        \revert Staff.Dots.transparent
+                                        \revert Staff.BarLine.transparent
+                                        \revert Staff.Clef.transparent
+                                        \revert Staff.TimeSignature.transparent
+                                        \revert Staff.TupletBracket.transparent
+                                        \revert Staff.TupletNumber.transparent
 
                                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                             {
@@ -3348,7 +4718,7 @@
                                             \once \override Staff.Beam.beam-thickness = 1
                                             \tweak Accidental.stencil #ly:text-interface::print
                                             \tweak Accidental.text \abjad-natural-markup
-                                            d''!32 * 11/8
+                                            f''!32 * 11/8
                                             \ppp
                                             [
                                               %! SPANNER_START
@@ -3385,17 +4755,17 @@
                                             \startTextSpanOne
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \four-fifths-sharp-markup
-                                            ds''!32 * 39/32
+                                            \tweak Accidental.text \one-quarter-sharp-markup
+                                            e''!32 * 39/32
 
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \one-fifth-sharp-markup
-                                            d''!32 * 9/8
+                                            \tweak Accidental.text \abjad-natural-markup
+                                            f''!32 * 9/8
 
                                             \start-switch 0.125
                                             \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \three-fifths-sharp-markup
-                                            ds''!32 * 35/32
+                                            \tweak Accidental.text \one-quarter-sharp-markup
+                                            f''!32 * 35/32
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -3427,13 +4797,13 @@
                                             % [alto flute 3 voice measure 20]
                                             r4
                                             \startStaff
-                                            \override Staff.Rest.transparent =  ##f
-                                            \override Staff.Dots.transparent =  ##f
-                                            \override Staff.BarLine.transparent = ##f
-                                            \override Staff.Clef.transparent =  ##f
-                                            \override Staff.TimeSignature.transparent =  ##f
-                                            \override Staff.TupletBracket.transparent =  ##f
-                                            \override Staff.TupletNumber.transparent =  ##f
+                                            \revert Staff.Rest.transparent
+                                            \revert Staff.Dots.transparent
+                                            \revert Staff.BarLine.transparent
+                                            \revert Staff.Clef.transparent
+                                            \revert Staff.TimeSignature.transparent
+                                            \revert Staff.TupletBracket.transparent
+                                            \revert Staff.TupletNumber.transparent
 
                                         }
 

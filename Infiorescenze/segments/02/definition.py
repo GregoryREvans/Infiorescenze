@@ -56,7 +56,7 @@ def articulate_gesture(selections):
                     ties[-1][-1],
                 )
                 for i, tie in enumerate(ties):
-                    abjad.attach(abjad.Articulation("stopped"), tie[0])
+                    abjad.attach(abjad.Articulation("key-click-plus"), tie[0])
                     if i == 0:
                         continue
                     if i % 3 == 0:
@@ -80,6 +80,146 @@ def articulate_gesture(selections):
                 abjad.attach(abjad.Dynamic("mf"), tie[0])
 
 
+def yield_cyclic_random_funnels(
+    start_positions=(1, 1, 1, 1, 1, 1, 1, 1),
+    destinations=[
+        (1, 1, 2, 1, 2, 2, 2, 1),
+        (3, 3, 3, 2, 2, 1, 1, 1),
+        (2, 2, 2, 2, 2, 2, 2, 2),
+    ],
+    max=3,
+    min=1,
+    seed=1,
+):
+    nested_out = [start_positions]
+    for destination in destinations:
+        funnel = evans.Sequence(nested_out[-1]).random_funnel(destination, [(min, max + 1) for _ in destination], random_seed=seed)
+        nested_out.extend(funnel)
+    funnel = evans.Sequence(nested_out[-1]).random_funnel(start_positions, [(min, max + 1) for _ in destination], random_seed=seed)
+    nested_out.extend(funnel)
+    nested_out = nested_out[:-1]
+    flattened_out = evans.Sequence(nested_out).flatten(depth=-1)
+    return flattened_out
+
+
+def articulate_by_random_funnel(selections, funnel, seed, color=r"safe-blue"):
+    random.seed(seed)
+    def do_material_a(run):
+        ties = abjad.select.logical_ties(run)
+        abjad.slur(ties, direction=abjad.DOWN)
+        first_pitch = ties[0][0].written_pitch
+        previous_finger = None
+        fingerings = [1, 2, 3, 4]
+        for i, tie in enumerate(ties):
+            for leaf in tie:
+                leaf.written_pitch = first_pitch
+            head = tie[0]
+            finger = random.choice(fingerings)
+            while finger == previous_finger:
+                finger = random.choice(fingerings)
+            previous_finger = finger
+            indicator = abjad.Markup(rf"\markup {{ \override #'(circle-padding . 0.3) \circle \number {finger} }}")
+            bundle = abjad.bundle(
+                indicator,
+                rf"- \tweak color #{color}",
+                r"- \tweak font-size #-5.5",
+            )
+            abjad.attach(bundle, head, direction=abjad.DOWN)
+            evans.vibrato_spanner(
+                peaks=[0, 2, 5, 3, 1, 0],
+                wavelengths=[2],
+                thickness=0.2,
+                divisions=[6],
+                counts=[len(run)],
+                cyclic=True,
+                padding=10,
+                forget=False,
+            )(run)
+            baca.register(run, 12)
+            baca.hairpin(run, "mp -- niente")
+    def do_material_z(run):
+        baca.register(run, 0)
+        ties = abjad.select.logical_ties(run)
+        handler = evans.ArticulationHandler(["key-click-plus"])
+        handler(ties)
+        if 2 < len(run):
+            abjad.attach(abjad.Dynamic("mf"), run[0])
+            abjad.attach(abjad.StartHairpin("<|"), run[0])
+            abjad.attach(abjad.Dynamic("ff"), run[len(run) // 2])
+            abjad.attach(abjad.StartHairpin(">o"), run[len(run) // 2])
+            abjad.attach(abjad.StopHairpin(), run[-1])
+        for i, tie in enumerate(ties):
+            if i % 3 == 0:
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\slapped", site="before"),
+                    tie[0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                    tie[-1],
+                )
+    def do_material_az(run):
+        baca.register(run, 12, 24)
+        ties = abjad.select.logical_ties(run)
+        Infiorescenze.frullato(run)
+        baca.hairpin(run, "sf > p")
+        baca.text_spanner(
+            run,
+            [r"\markup \flute-heel-rotation-markup #0", "->", r"\markup \flute-heel-rotation-markup #-65"],
+            abjad.Tweak(r"\tweak color #safe-green"),
+            abjad.Tweak(r"\tweak staff-padding 15"),
+            final_piece_spanner=r"\stopTextSpanOne",
+            autodetect_right_padding=False,
+            bookend=True,
+            lilypond_id=1,
+        )
+        for i, tie in enumerate(ties):
+            if i != 0:
+                if i % 4 == 0:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(r"\slapped", site="before"),
+                        tie[0],
+                    )
+                    abjad.attach(
+                        abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                        tie[-1],
+                    )
+                else:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(r"\air-tone", site="before"),
+                        tie[0],
+                    )
+                    abjad.attach(
+                        abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                        tie[-1],
+                    )
+                if i % 5 == 0:
+                    abjad.attach(abjad.Articulation("key-click-plus"), tie[0])
+                if i % 3 == 0:
+                    abjad.attach(abjad.Articulation("accent"), tie[0])
+            else:
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\half-air-tone", site="before"),
+                    tie[0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+                    tie[-1],
+                )
+    cyc_funnel = evans.CyclicList(funnel, forget=False)
+    runs = abjad.select.runs(selections)
+    funnel_values = [cyc_funnel(r=1)[0] for _ in runs]
+    for funnel_i, run in zip(funnel_values, runs):
+        if funnel_i == 1:
+            do_material_a(run)
+        elif funnel_i == 2:
+            do_material_z(run)
+        elif funnel_i == 3:
+            do_material_az(run)
+        else:
+            raise Exception(f"BAD FUNNEL VALUE: {funnel_i}")
+
+
 maker = evans.SegmentMaker(
     instruments=Infiorescenze.instruments,
     names=[
@@ -91,6 +231,16 @@ maker = evans.SegmentMaker(
     name_staves=False,
     fermata_measures=Infiorescenze.fermata_measures_02,
     commands=[
+        # evans.attach(
+        #     "alto flute 1 voice",
+        #     abjad.LilyPondLiteral(r"\stopStaff", site="before"),
+        #     selector=lambda _: abjad.select.leaf(_, 0),
+        # ),
+        # evans.attach(
+        #     "alto flute 1 voice",
+        #     abjad.LilyPondLiteral(r"\startStaff", site="before"),
+        #     selector=lambda _: abjad.select.leaf(_, 3),
+        # ),
         evans.MusicCommand(
             ("alto flute 2 voice", (0, 24)),
             evans.make_tied_notes(),
@@ -164,7 +314,7 @@ maker = evans.SegmentMaker(
                 extra_padding=[3, 3, 3, 4, 3, 3, 4.5, 4.5, 3],
                 with_notes=True,
             ),
-            lambda _: [abjad.attach(abjad.StemTremolo(32), note) for note in abjad.select.get(abjad.select.notes(_), abjad.math.cumulative_sums([2, 4, 3, 5])[1:], period=abjad.math.cumulative_sums([2, 4, 3, 5])[-1] + 1)],
+            lambda _: Infiorescenze.frullato([note for note in abjad.select.get(abjad.select.notes(_), abjad.math.cumulative_sums([2, 4, 3, 5])[1:], period=abjad.math.cumulative_sums([2, 4, 3, 5])[-1] + 1)]),
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
@@ -175,6 +325,10 @@ maker = evans.SegmentMaker(
             ),
             evans.Attachment(
                 abjad.LilyPondLiteral(r"\override Staff.NoteHead.details.interrupt-color = #safe-green", site="before"),
+                selector=lambda _: abjad.select.leaf(_, 3),
+            ),
+            evans.Attachment(
+                abjad.LilyPondLiteral(r"\override Staff.NoteHead.details.switch-color = #safe-green", site="before"),
                 selector=lambda _: abjad.select.leaf(_, 3),
             ),
             evans.Attachment(
@@ -189,6 +343,57 @@ maker = evans.SegmentMaker(
                 abjad.Dynamic("ff"),
                 selector=lambda _: abjad.select.note(_, -1),
             ),
+            abjad.Markup(r'\boxed-markup-down "affettuoso" 1'),
+        ),
+        evans.attach(
+            "alto flute 2 voice",
+            abjad.LilyPondLiteral([
+                r"\all-color-music #safe-green",
+                "\override Accidental.color = black",
+                "\override Beam.color = black",
+                "\override Dots.color = black",
+                "\override Flag.color = black",
+                "\override Glissando.color = black",
+                "\override MultiMeasureRest.color = black",
+                "\override NoteHead.color = black",
+                "\override RepeatTie.color = black",
+                "\override Rest.color = black",
+                "\override Slur.color = black",
+                "\override Stem.color = black",
+                "\override StemTremolo.color = black",
+                "\override Tie.color = black",
+            ], site="before"),
+            selector=evans.select_measures([3], leaf=0),
+        ),
+        evans.attach(
+            "alto flute 2 voice",
+            abjad.LilyPondLiteral(r"\all-color-music black", site="before"),
+            selector=evans.select_measures([9], leaf=0),
+        ),
+        evans.attach(
+            "alto flute 2 voice",
+            abjad.LilyPondLiteral([
+                r"\all-color-music #safe-green",
+                "\override Accidental.color = black",
+                "\override Beam.color = black",
+                "\override Dots.color = black",
+                "\override Flag.color = black",
+                "\override Glissando.color = black",
+                "\override MultiMeasureRest.color = black",
+                "\override NoteHead.color = black",
+                "\override RepeatTie.color = black",
+                "\override Rest.color = black",
+                "\override Slur.color = black",
+                "\override Stem.color = black",
+                "\override StemTremolo.color = black",
+                "\override Tie.color = black",
+            ], site="before"),
+            selector=evans.select_measures([17], leaf=0),
+        ),
+        evans.attach(
+            "alto flute 2 voice",
+            abjad.LilyPondLiteral(r"\all-color-music black", site="before"),
+            selector=evans.select_measures([18], leaf=0),
         ),
         evans.MusicCommand(
             ("alto flute 1 voice", [3, 4, 5, 6, 7]),
@@ -245,7 +450,7 @@ maker = evans.SegmentMaker(
                 selector=lambda _: abjad.select.leaf(_, 0),
             ),
             evans.Attachment(
-                abjad.LilyPondLiteral(r"\all-color-music \safe-black", site="after"),
+                abjad.LilyPondLiteral(r"\all-color-music black", site="after"),
                 selector=lambda _: abjad.select.leaf(_, -1),
             ),
         ),
@@ -272,7 +477,7 @@ maker = evans.SegmentMaker(
             ),
             evans.PitchHandler([14]),
             evans.PitchHandler(
-                [0, "8/5", "2/5", "6/5", "4/5", 2],
+                evans.Sequence(Infiorescenze.zipped_fib_compression).mirror(sequential_duplicates=False).rotate(4).random_walk(length=10, step_list=[1], random_seed=9),
                 apply_all=True,
                 apply_all_spelling="sharp",
             ),
@@ -301,10 +506,6 @@ maker = evans.SegmentMaker(
                 pieces=lambda _: abjad.select.runs(_),
             ),
             abjad.Dynamic("ppp"),
-            # evans.Attachment(
-            #     abjad.LilyPondLiteral(r"\all-color-music \safe-black", site="after"),
-            #     selector=lambda _: abjad.select.leaf(_, -1),
-            # ),
         ),
         evans.call(
             "alto flute 2 voice",
@@ -389,7 +590,7 @@ maker = evans.SegmentMaker(
             ),
             evans.PitchHandler([14]),
             evans.PitchHandler(
-                [0, "8/5", "2/5", "6/5", "4/5", 2],
+                evans.Sequence(Infiorescenze.zipped_fib_compression).mirror(sequential_duplicates=False).rotate(4).random_walk(length=10, step_list=[1], random_seed=11),
                 apply_all=True,
                 apply_all_spelling="sharp",
             ),
@@ -418,10 +619,6 @@ maker = evans.SegmentMaker(
                 pieces=lambda _: abjad.select.runs(_),
             ),
             abjad.Dynamic("ppp"),
-            # evans.Attachment(
-            #     abjad.LilyPondLiteral(r"\all-color-music \safe-black", site="after"),
-            #     selector=lambda _: abjad.select.leaf(_, -1),
-            # ),
         ),
         evans.MusicCommand(
             ("alto flute 2 voice", (24, 44)),
@@ -454,6 +651,24 @@ maker = evans.SegmentMaker(
                     overhang=True,
                     reversed_=False,
                 ),
+                # evans.fuse_durations(
+                #     group_sizes=[
+                #         4, 2, 4, 2, 2,
+                #     ],
+                #     boolean_vector=evans.integer_sequence_to_boolean_vector(
+                #         [_ // 2 for _ in [
+                #             26,
+                #             2, 4, 2, 2, 4,
+                #             1, 3, 1, 1, 3,
+                #             1, 2, 1, 1, 2,
+                #             1, 1, 1, 1, 1,
+                #         ]],
+                #         [abjad.RIGHT],
+                #     ),
+                #     cyclic=True,
+                #     overhang=True,
+                #     reversed_=False,
+                # ),
                 source_maker=evans.unity_capsule_rhythms(
                     trailing_divisions=[(3, 8), (7, 6)],
                     intercalate_silences_between_groups=True,
@@ -508,6 +723,12 @@ maker = evans.SegmentMaker(
             lambda _: evans.long_beam(
                 _, beam_rests=True, beam_lone_notes=False
             ),
+            abjad.Markup(r'\boxed-markup-down "feroce, giocoso" 1'),
+        ),
+        evans.MusicCommand(
+            ("alto flute 2 voice", 43),
+            evans.note(),
+            lambda _: rmakers.force_rest(_),
         ),
         evans.call(
             "alto flute 2 voice",
@@ -524,6 +745,40 @@ maker = evans.SegmentMaker(
             lambda _: articulate_gesture(_),
             selector=evans.select_measures([24, 25, 26, 27]),
         ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: articulate_by_random_funnel(
+                _,
+                funnel=yield_cyclic_random_funnels(
+                    start_positions=(3, 3, 3),
+                    destinations=[
+                        (1, 2, 2),
+                        (2, 2, 3),
+                        (1, 1, 1),
+                    ],
+                    max=3,
+                    min=1,
+                    seed=1,
+                ),
+                seed=1,
+            ),
+            selector=evans.select_measures([_ for _ in range(28, 41)]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            lambda _: articulate_gesture(_),
+            selector=evans.select_measures([_ for _ in range(41, 44)]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.TranspositionHandler(["+P8", "+P1", "+P1", "+P8", "+P1", "+P1", "+P8"]),
+            selector=evans.select_measures([_ for _ in range(41, 44)]),
+        ),
+        evans.call(
+            "alto flute 2 voice",
+            evans.TranspositionHandler(["+P1", "+P8", "+P1", "+P8", "+P1"]),
+            selector=evans.select_measures([_ for _ in range(41, 44)]),
+        ),
         ### measure-destroying functions
         evans.call(
             "alto flute 2 voice",
@@ -533,8 +788,8 @@ maker = evans.SegmentMaker(
                 grace_duration=(1, 30),
                 default_beam_position=9,
                 beam_position_list=[
-                    (2, 34),
-                    (3, 34),
+                    (2, 36),
+                    (3, 36),
                 ],
             ),
             selector=evans.select_measures([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]),
@@ -560,7 +815,7 @@ maker = evans.SegmentMaker(
         ),
         evans.call(
             "alto flute 2 voice",
-            evans.ArticulationHandler(["stopped"], direction=abjad.DOWN),
+            evans.ArticulationHandler(["key-click-plus"], direction=abjad.DOWN),
             selector=lambda _: abjad.select.notes(evans.select_measures([_ for _ in range(16, 24)])(_), grace=True),
         ),
         ###
@@ -576,53 +831,83 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi_literals[1], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 3),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "अ" "γ" "`N" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 0),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi_literals[0], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 3),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi[0],
+        #     lambda _: abjad.select.leaf(_, 3),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi[1],
-            lambda _: abjad.select.leaf(_, 3),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "इ" "{{εγ}}" "`N" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 3),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi_literals[1], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 8),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi[1],
+        #     lambda _: abjad.select.leaf(_, 8),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi_literals[2], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 8),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "उ" "{{ηγ}}" "`J" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 8),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi_literals[3], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 14),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi[3],
+        #     lambda _: abjad.select.leaf(_, 14),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi[2],
-            lambda _: abjad.select.leaf(_, 8),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "ऋ" "γ" "`J" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 14),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi_literals[2], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 16),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi[2],
+        #     lambda _: abjad.select.leaf(_, 16),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi_literals[3], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 14),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "ऌ" "{{εη}}" "`J" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 16),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 23),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.slow_tempi[5],
+        #     lambda _: abjad.select.leaf(_, 23),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.slow_tempi[3],
-            lambda _: abjad.select.leaf(_, 14),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.slow_tempi_literals[4], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 16),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.slow_tempi[4],
-            lambda _: abjad.select.leaf(_, 16),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.slow_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 23),
-        ),
-        evans.attach(
-            "Global Context",
-            Infiorescenze.slow_tempi[5],
-            lambda _: abjad.select.leaf(_, 23),
+            abjad.Markup(rf'\material-label-markup "II" "ᛚ" "4" "ए" "η" "`J" "{Infiorescenze.numerals[0]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 23),
         ),
         evans.attach(
             "Global Context",
@@ -636,13 +921,23 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi_literals[0], # 1 2 3 (4) 5 > (1) 2 3 4 5
+            abjad.Markup(rf'\material-label-markup "II" "ᚠ" "5" "अa" "ε" "`J" "{Infiorescenze.numerals[2]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 24),
+        ),
+        evans.attach(
+            "Global Context",
+            Infiorescenze.fast_tempi_literals[1], # 1 2 3 (4) 5 > (1) 2 3 4 5
             lambda _: abjad.select.leaf(_, 28),
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi[0],
+            Infiorescenze.fast_tempi[1],
             lambda _: abjad.select.leaf(_, 28),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(rf'\material-label-markup "II" "ᚠ" "5" "अb" "{{ζα}}" "`J" "{Infiorescenze.numerals[1]}" 2'), #
+            selector=lambda _: abjad.select.leaf(_, 28),
         ),
         evans.attach(
             "Global Context",
@@ -656,13 +951,23 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
-            lambda _: abjad.select.leaf(_, 36),
+            abjad.Markup(rf'\material-label-markup "II" "ᚠ" "5" "अc" "ζ" "`J" "{Infiorescenze.numerals[3]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 31),
         ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi_literals[5], # 1 2 3 (4) 5 > (1) 2 3 4 5
+        #     lambda _: abjad.select.leaf(_, 36),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     Infiorescenze.fast_tempi[5],
+        #     lambda _: abjad.select.leaf(_, 36),
+        # ),
         evans.attach(
             "Global Context",
-            Infiorescenze.fast_tempi[5],
-            lambda _: abjad.select.leaf(_, 36),
+            abjad.Markup(rf'\material-label-markup "II" "ᚠ" "5" "इa" "α" "`J" "{Infiorescenze.numerals[3]}" 2'),
+            selector=lambda _: abjad.select.leaf(_, 36),
         ),
         evans.attach(
             "Global Context",
@@ -676,57 +981,7 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "अ" "γ" "`N" "१" 2'),
-            selector=lambda _: abjad.select.leaf(_, 0),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "इ" "{εγ}" "`N" "२" 2'),
-            selector=lambda _: abjad.select.leaf(_, 3),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "उ" "{ηγ}" "`J" "३" 2'),
-            selector=lambda _: abjad.select.leaf(_, 8),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "ऋ" "γ" "`J" "४" 2'),
-            selector=lambda _: abjad.select.leaf(_, 14),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "ऌ" "{εη}" "`J" "५" 2'),
-            selector=lambda _: abjad.select.leaf(_, 16),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᛚ" "4" "ए" "η" "`J" "६" 2'),
-            selector=lambda _: abjad.select.leaf(_, 23),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᚠ" "5" "अa" "ε" "`J" "३" 2'),
-            selector=lambda _: abjad.select.leaf(_, 24),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᚠ" "5" "अb" "{ζα}" "`J" "१" 2'), #
-            selector=lambda _: abjad.select.leaf(_, 28),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᚠ" "5" "अc" "ζ" "`J" "४" 2'),
-            selector=lambda _: abjad.select.leaf(_, 31),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᚠ" "5" "इa" "α" "`J" "६" 2'),
-            selector=lambda _: abjad.select.leaf(_, 36),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r'\material-label-markup "II" "ᚠ" "5" "इb" "{αε}" "`J" "५" 2'),
+            abjad.Markup(rf'\material-label-markup "II" "ᚠ" "5" "इb" "{{αε}}" "`J" "{Infiorescenze.numerals[4]}" 2'),
             selector=lambda _: abjad.select.leaf(_, 42),
         ),
         # evans.call(
@@ -734,11 +989,11 @@ maker = evans.SegmentMaker(
         #     lambda _: Infiorescenze.cutaway(_),
         #     selector=lambda _: _,
         # ),
-        evans.call(
-            "alto flute 1 voice",
-            lambda _: Infiorescenze.cutaway(_),
-            selector=lambda _: abjad.select.get(abjad.select.leaves(_, pitched=False), [0, 1, 2]),
-        ),
+        # evans.call(
+        #     "alto flute 1 voice",
+        #     lambda _: Infiorescenze.cutaway(_),
+        #     selector=lambda _: abjad.select.get(abjad.select.leaves(_, pitched=False), [0, 1, 2]),
+        # ),
         evans.call(
             "alto flute 3 voice",
             lambda _: Infiorescenze.cutaway(_),

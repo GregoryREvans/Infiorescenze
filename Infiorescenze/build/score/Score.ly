@@ -1,4 +1,4 @@
-\version "2.22.1"  %2.23.2
+\version "2.23.81"
 \language "english" %! LilyPondFile
 
 \include "abjad.ily"
@@ -14,6 +14,10 @@
         { \include "layout.ly" }
     	{
             \include "01.ly"
+            \include "02.ly"
+            \include "03.ly"
+            \include "04.ly"
+            \include "05.ly"
     	}
     >>
 %{ \midi{} %}
